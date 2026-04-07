@@ -11,63 +11,54 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap"
         rel="stylesheet">
     <style>
-        /* ── PREMIUM BEIGE & BROWN COLOR PALETTE ── */
+        /* ── PREMIUM BLACK, WHITE & GOLD COLOR PALETTE ── */
         :root {
-            /* Primary Backgrounds */
-            --beige-primary: #F5F5DC;
-            /* Main beige background */
-            --beige-soft: #EFE6D8;
-            /* Softer beige alternative */
-            --beige-warm: #E8DCC8;
-            /* Warm beige for accents */
-            --beige-dark: #D4C4A8;
-            /* Darker beige for depth */
+            /* Black Primary */
+            --black-primary: #000000;
+            --black-soft: #121212;
+            /* Better for UI backgrounds */
+            --black-rich: #0A0A0A;
+            /* Rich black */
+            --black-warm: #1A1818;
+            /* Warm black */
+            --black-light: #2A2A2A;
+            /* Light black for cards */
 
             /* White Base */
             --white-pure: #FFFFFF;
-            --white-soft: #FAFAFA;
-            /* Off-white - better for eyes */
-            --white-warm: #F8F6F2;
+            --white-soft: #F8F8F8;
+            /* Cleaner off-white */
+            --white-warm: #F5F5F5;
             /* Warm white */
+            --white-cream: #FAFAFA;
+            /* Cream white */
 
-            /* Brown Text & Accents */
-            --brown-dark: #4B2E2B;
-            /* Dark brown - primary text */
-            --brown-medium: #8B5E3C;
-            /* Medium brown - accents */
-            --brown-light: #A0714F;
-            /* Light brown - hover states */
-            --brown-soft: #C4A07A;
-            /* Soft brown - borders */
-            --brown-warm: #6B3A2A;
-            /* Warm brown - highlights */
-
-            /* Additional Neutrals */
-            --gray-light: #F0EDE8;
-            --gray-medium: #D4CFC8;
-            --gray-dark: #5A554D;
-
-            /* Accent Colors */
-            --accent-gold: #C4A035;
-            /* Subtle gold accent */
-            --accent-cream: #FFF8E7;
-            /* Cream accent */
+            /* Gold Accent - The Important One */
+            --gold-classic: #D4AF37;
+            /* Classic luxurious gold */
+            --gold-soft: #C9A14A;
+            /* Soft elegant gold */
+            --gold-dark: #B8962E;
+            /* Rich dark gold */
+            --gold-light: #E8C96A;
+            /* Light gold for highlights */
+            --gold-muted: #A8882C;
+            /* Muted gold for subtle accents */
 
             /* Text Colors */
-            --text-primary: #4B2E2B;
-            /* Dark brown for main text */
-            --text-secondary: #8B5E3C;
-            /* Medium brown for secondary */
-            --text-muted: #A08060;
-            /* Muted brown for subtle text */
-            --text-light: #C4A07A;
-            /* Light brown for meta info */
+            --text-light: #FFFFFF;
+            --text-light-muted: rgba(255, 255, 255, 0.7);
+            --text-dark: #121212;
+            --text-dark-muted: rgba(18, 18, 18, 0.7);
+            --text-gold: #D4AF37;
 
             /* Shadows & Effects */
-            --shadow-sm: 0 2px 8px rgba(75, 46, 43, 0.06);
-            --shadow-md: 0 8px 24px rgba(75, 46, 43, 0.08);
-            --shadow-lg: 0 16px 40px rgba(75, 46, 43, 0.12);
-            --shadow-xl: 0 24px 60px rgba(75, 46, 43, 0.15);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.16);
+            --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.2);
+            --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.2);
+            --shadow-gold-lg: 0 16px 50px rgba(212, 175, 55, 0.25);
 
             /* Animation */
             --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
@@ -94,8 +85,8 @@
         }
 
         body {
-            background: var(--beige-primary);
-            color: var(--text-primary);
+            background: var(--white-soft);
+            color: var(--text-dark);
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
             line-height: 1.6;
@@ -114,7 +105,7 @@
         }
 
         :focus-visible {
-            outline: 3px solid var(--brown-medium);
+            outline: 3px solid var(--gold-classic);
             outline-offset: 4px;
             border-radius: 8px;
         }
@@ -125,20 +116,20 @@
                 position: fixed;
                 width: 8px;
                 height: 8px;
-                background: var(--brown-medium);
+                background: var(--gold-classic);
                 border-radius: 50%;
                 pointer-events: none;
                 z-index: 9999;
                 transform: translate(-50%, -50%);
                 transition: width 0.2s, height 0.2s;
-                mix-blend-mode: multiply;
+                mix-blend-mode: difference;
             }
 
             .cursor-ring {
                 position: fixed;
                 width: 40px;
                 height: 40px;
-                border: 1.5px solid var(--brown-dark);
+                border: 1.5px solid var(--gold-classic);
                 border-radius: 50%;
                 pointer-events: none;
                 z-index: 9998;
@@ -151,7 +142,7 @@
         #loader {
             position: fixed;
             inset: 0;
-            background: linear-gradient(135deg, var(--beige-soft) 0%, var(--beige-primary) 100%);
+            background: linear-gradient(135deg, var(--black-soft) 0%, var(--black-primary) 100%);
             z-index: 10000;
             display: flex;
             flex-direction: column;
@@ -163,15 +154,16 @@
         .loader-logo {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 8vw, 3.5rem);
-            color: var(--brown-dark);
+            color: var(--gold-classic);
             letter-spacing: 0.15em;
             opacity: 0;
             animation: fadeUp 0.8s 0.3s forwards;
+            text-shadow: 0 2px 20px rgba(212, 175, 55, 0.3);
         }
 
         .loader-sub {
             font-family: 'Cormorant Garamond', serif;
-            color: var(--brown-medium);
+            color: var(--white-soft);
             font-size: clamp(0.9rem, 3vw, 1.1rem);
             letter-spacing: 0.4em;
             text-transform: uppercase;
@@ -182,7 +174,7 @@
         .loader-bar {
             width: min(240px, 60vw);
             height: 2px;
-            background: var(--beige-dark);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 2px;
             overflow: hidden;
             opacity: 0;
@@ -191,7 +183,7 @@
 
         .loader-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--brown-light), var(--brown-dark), var(--brown-medium));
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-classic), var(--gold-light));
             width: 0;
             animation: fill 2s 1.2s var(--ease-premium) forwards;
         }
@@ -216,14 +208,14 @@
 
         /* ── TOP BANNER ── */
         .top-banner {
-            background: linear-gradient(90deg, var(--brown-dark) 0%, var(--brown-medium) 50%, var(--brown-dark) 100%);
-            color: var(--white-soft);
+            background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold-classic) 50%, var(--gold-dark) 100%);
+            color: var(--black-primary);
             text-align: center;
             padding: 10px;
             font-size: clamp(0.7rem, 3vw, 0.85rem);
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
             position: relative;
             z-index: 100;
         }
@@ -234,9 +226,9 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--beige-dark);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             transform: translateY(-100%);
             transition: transform 0.6s var(--ease-premium);
             padding: 12px 0;
@@ -256,13 +248,13 @@
         .nav-logo {
             font-family: 'Playfair Display', serif;
             font-size: clamp(1.2rem, 4vw, 1.8rem);
-            color: var(--brown-dark);
+            color: var(--black-primary);
             letter-spacing: 0.08em;
             font-weight: 700;
         }
 
         .nav-logo span {
-            color: var(--brown-medium);
+            color: var(--gold-classic);
             font-style: italic;
         }
 
@@ -280,7 +272,7 @@
             display: block;
             width: 100%;
             height: 2px;
-            background: var(--brown-dark);
+            background: var(--black-primary);
             position: absolute;
             transition: all 0.3s var(--ease-premium);
         }
@@ -320,7 +312,7 @@
             padding: 80px 30px 30px;
             list-style: none;
             transition: right 0.4s var(--ease-premium);
-            box-shadow: -5px 0 30px rgba(75, 46, 43, 0.1);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
             z-index: 999;
         }
 
@@ -336,7 +328,7 @@
             font-size: 1rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--text-primary);
+            color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
@@ -345,13 +337,13 @@
         }
 
         .nav-links a:hover {
-            color: var(--brown-medium);
+            color: var(--gold-classic);
         }
 
         .nav-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(75, 46, 43, 0.3);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 998;
             opacity: 0;
             visibility: hidden;
@@ -394,8 +386,8 @@
 
             .nav-cta {
                 display: block;
-                background: var(--brown-medium);
-                color: var(--white-soft);
+                background: var(--gold-classic);
+                color: var(--black-primary);
                 padding: 12px 28px;
                 border: none;
                 font-family: 'Montserrat', sans-serif;
@@ -409,9 +401,9 @@
             }
 
             .nav-cta:hover {
-                background: var(--brown-dark);
+                background: var(--gold-dark);
                 transform: translateY(-2px);
-                box-shadow: 0 10px 30px rgba(75, 46, 43, 0.15);
+                box-shadow: var(--shadow-gold);
             }
         }
 
@@ -420,7 +412,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--beige-soft) 0%, var(--beige-primary) 100%);
+            background: linear-gradient(135deg, var(--black-soft) 0%, var(--black-primary) 100%);
             position: relative;
             overflow: hidden;
             padding: 80px 0;
@@ -430,8 +422,8 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(circle at 20% 30%, rgba(139, 94, 60, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(75, 46, 43, 0.03) 0%, transparent 60%);
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
         }
 
         .hero-content {
@@ -445,15 +437,15 @@
 
         .hero-badge {
             display: inline-block;
-            border: 1.5px solid var(--brown-medium);
-            color: var(--brown-dark);
+            border: 1.5px solid var(--gold-classic);
+            color: var(--gold-classic);
             font-size: clamp(0.7rem, 3vw, 0.85rem);
             letter-spacing: 0.3em;
             text-transform: uppercase;
             padding: 10px 25px;
             margin-bottom: 30px;
             backdrop-filter: blur(10px);
-            background: rgba(245, 245, 220, 0.5);
+            background: rgba(18, 18, 18, 0.3);
             border-radius: 50px;
         }
 
@@ -461,38 +453,38 @@
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 10vw, 6rem);
             line-height: 1.1;
-            color: var(--brown-dark);
+            color: var(--white-pure);
             font-weight: 900;
             margin-bottom: 20px;
         }
 
-        .hero-title .brown-accent {
-            color: var(--brown-medium);
+        .hero-title .gold-accent {
+            color: var(--gold-classic);
             font-style: italic;
         }
 
         .hero-title .outline {
-            -webkit-text-stroke: 1.5px var(--brown-dark);
+            -webkit-text-stroke: 1.5px var(--gold-classic);
             color: transparent;
         }
 
         @media (max-width: 768px) {
             .hero-title .outline {
-                -webkit-text-stroke: 1px var(--brown-dark);
+                -webkit-text-stroke: 1px var(--gold-classic);
             }
         }
 
         .hero-tagline {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.1rem, 4vw, 1.8rem);
-            color: var(--brown-medium);
+            color: var(--gold-soft);
             margin-bottom: 20px;
             letter-spacing: 0.05em;
             font-weight: 400;
         }
 
         .hero-desc {
-            color: var(--text-secondary);
+            color: var(--text-light-muted);
             font-size: clamp(0.9rem, 3.5vw, 1.1rem);
             max-width: 600px;
             margin: 0 auto 40px;
@@ -507,15 +499,15 @@
         }
 
         .btn-primary {
-            background: var(--brown-medium);
-            color: var(--white-soft);
+            background: linear-gradient(135deg, var(--gold-classic), var(--gold-dark));
+            color: var(--black-primary);
             padding: clamp(12px, 3vw, 16px) clamp(24px, 5vw, 40px);
             font-size: clamp(0.8rem, 3vw, 0.95rem);
             letter-spacing: 0.15em;
             text-transform: uppercase;
             border: none;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s var(--ease-premium);
             text-decoration: none;
             display: inline-block;
@@ -523,15 +515,14 @@
         }
 
         .btn-primary:hover {
-            background: var(--brown-dark);
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(75, 46, 43, 0.2);
+            box-shadow: var(--shadow-gold-lg);
         }
 
         .btn-outline {
             background: transparent;
-            border: 1.5px solid var(--brown-medium);
-            color: var(--brown-dark);
+            border: 1.5px solid var(--gold-classic);
+            color: var(--gold-classic);
             padding: clamp(12px, 3vw, 16px) clamp(24px, 5vw, 40px);
             font-size: clamp(0.8rem, 3vw, 0.95rem);
             letter-spacing: 0.15em;
@@ -545,16 +536,16 @@
         }
 
         .btn-outline:hover {
-            background: var(--brown-medium);
-            color: var(--white-soft);
+            background: var(--gold-classic);
+            color: var(--black-primary);
         }
 
         /* ── FLOATING ELEMENTS ── */
         .floating-shape {
             position: absolute;
             border-radius: 50%;
-            background: rgba(139, 94, 60, 0.03);
-            border: 1px solid rgba(139, 94, 60, 0.08);
+            background: rgba(212, 175, 55, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.1);
             animation: float 12s ease-in-out infinite;
             pointer-events: none;
         }
@@ -600,11 +591,9 @@
 
         /* ── MARQUEE ── */
         .marquee-wrap {
-            background: linear-gradient(90deg, var(--beige-dark), var(--beige-soft), var(--beige-dark));
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-classic), var(--gold-dark));
             overflow: hidden;
             padding: 16px 0;
-            border-top: 1px solid var(--beige-warm);
-            border-bottom: 1px solid var(--beige-warm);
         }
 
         .marquee-track {
@@ -622,7 +611,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1rem, 3vw, 1.2rem);
             letter-spacing: 0.2em;
-            color: var(--brown-dark);
+            color: var(--black-primary);
             padding: 0 40px;
             font-weight: 700;
             text-transform: uppercase;
@@ -631,7 +620,7 @@
         .marquee-track span::after {
             content: '✦';
             margin-left: 40px;
-            color: var(--brown-medium);
+            color: var(--black-primary);
         }
 
         @keyframes marquee {
@@ -658,7 +647,7 @@
             font-size: clamp(0.7rem, 2.5vw, 0.85rem);
             letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--brown-medium);
+            color: var(--gold-dark);
             margin-bottom: 15px;
             font-weight: 600;
         }
@@ -666,7 +655,7 @@
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 6vw, 3.5rem);
-            color: var(--brown-dark);
+            color: var(--black-primary);
             line-height: 1.2;
             margin-bottom: 20px;
         }
@@ -674,7 +663,7 @@
         .divider {
             width: 80px;
             height: 3px;
-            background: linear-gradient(90deg, transparent, var(--brown-medium), transparent);
+            background: linear-gradient(90deg, transparent, var(--gold-classic), transparent);
             margin: 0 auto;
         }
 
@@ -707,11 +696,13 @@
             border-radius: 16px;
             box-shadow: var(--shadow-md);
             transition: all 0.4s var(--ease-premium);
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         .cat-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-xl);
+            border-color: var(--gold-classic);
         }
 
         .cat-img-wrap {
@@ -735,21 +726,21 @@
         }
 
         .cat-bg-kids {
-            background: linear-gradient(135deg, #FFF5F0 0%, #FFE8E0 100%);
+            background: linear-gradient(135deg, #F8F8F8 0%, #E8E8E8 100%);
         }
 
         .cat-bg-men {
-            background: linear-gradient(135deg, #F5F0EB 0%, #E8E0D8 100%);
+            background: linear-gradient(135deg, #FAFAFA 0%, #ECECEC 100%);
         }
 
         .cat-bg-women {
-            background: linear-gradient(135deg, #FDF5F0 0%, #F5E8DC 100%);
+            background: linear-gradient(135deg, #F5F5F5 0%, #E5E5E5 100%);
         }
 
         .cat-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(75, 46, 43, 0.85);
+            background: rgba(0, 0, 0, 0.85);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -763,8 +754,8 @@
         }
 
         .cat-btn {
-            border: 1.5px solid var(--white-soft);
-            color: var(--white-soft);
+            border: 1.5px solid var(--gold-classic);
+            color: var(--gold-classic);
             padding: 12px 30px;
             font-size: 0.85rem;
             letter-spacing: 0.2em;
@@ -773,11 +764,12 @@
             cursor: pointer;
             transition: all 0.3s;
             border-radius: 50px;
+            font-weight: 600;
         }
 
         .cat-btn:hover {
-            background: var(--white-soft);
-            color: var(--brown-dark);
+            background: var(--gold-classic);
+            color: var(--black-primary);
         }
 
         .cat-info {
@@ -787,13 +779,13 @@
         .cat-name {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            color: var(--brown-dark);
+            color: var(--black-primary);
             margin-bottom: 10px;
         }
 
         .cat-desc {
             font-size: 0.95rem;
-            color: var(--text-secondary);
+            color: var(--text-dark-muted);
             margin-bottom: 15px;
             line-height: 1.7;
         }
@@ -802,22 +794,22 @@
             display: inline-block;
             font-size: 0.75rem;
             letter-spacing: 0.2em;
-            color: var(--brown-medium);
+            color: var(--gold-dark);
             text-transform: uppercase;
             font-weight: 600;
         }
 
         /* ── FEATURES GRID ── */
         #features {
-            background: linear-gradient(135deg, var(--beige-soft) 0%, var(--beige-primary) 100%);
+            background: var(--black-soft);
         }
 
         #features .section-title {
-            color: var(--brown-dark);
+            color: var(--white-pure);
         }
 
         #features .section-tag {
-            color: var(--brown-medium);
+            color: var(--gold-classic);
         }
 
         .features-grid {
@@ -843,17 +835,16 @@
         .feature-item {
             text-align: center;
             padding: 30px 20px;
-            background: var(--white-pure);
+            background: var(--black-light);
             border-radius: 16px;
-            border: 1px solid var(--beige-dark);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             transition: all 0.3s;
-            box-shadow: var(--shadow-sm);
         }
 
         .feature-item:hover {
             transform: translateY(-5px);
-            border-color: var(--brown-medium);
-            box-shadow: var(--shadow-lg);
+            border-color: var(--gold-classic);
+            box-shadow: var(--shadow-gold);
         }
 
         .feature-icon {
@@ -865,13 +856,13 @@
         .feature-title {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            color: var(--brown-dark);
+            color: var(--gold-classic);
             margin-bottom: 15px;
         }
 
         .feature-text {
             font-size: 0.95rem;
-            color: var(--text-secondary);
+            color: var(--text-light-muted);
             line-height: 1.8;
         }
 
@@ -882,7 +873,7 @@
             gap: 50px;
             max-width: 1200px;
             margin: 0 auto;
-            background: var(--white-soft);
+            background: var(--white-pure);
             border-radius: 24px;
             padding: 60px 5%;
         }
@@ -903,7 +894,7 @@
         .about-card {
             position: absolute;
             background: var(--white-pure);
-            border: 2px solid var(--brown-medium);
+            border: 2px solid var(--gold-classic);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -918,7 +909,7 @@
             height: 350px;
             top: 0;
             left: 0;
-            background: linear-gradient(135deg, var(--beige-primary), var(--beige-soft));
+            background: linear-gradient(135deg, var(--white-soft), var(--white-cream));
         }
 
         .about-card-2 {
@@ -926,8 +917,8 @@
             height: 280px;
             bottom: 0;
             right: 0;
-            background: linear-gradient(135deg, var(--brown-light), var(--brown-soft));
-            color: var(--white-soft);
+            background: linear-gradient(135deg, var(--gold-classic), var(--gold-dark));
+            color: var(--black-primary);
         }
 
         @media (max-width: 768px) {
@@ -961,7 +952,7 @@
         .stat-num {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 5vw, 3rem);
-            color: var(--brown-medium);
+            color: var(--gold-dark);
             font-weight: 900;
         }
 
@@ -969,13 +960,13 @@
             font-size: 0.8rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: var(--text-dark-muted);
             margin-top: 8px;
         }
 
         /* ── TESTIMONIALS ── */
         #testimonials {
-            background: var(--beige-soft);
+            background: var(--white-soft);
         }
 
         .testimonials-grid {
@@ -1004,7 +995,7 @@
             border-radius: 16px;
             box-shadow: var(--shadow-md);
             transition: all 0.3s;
-            border-left: 4px solid var(--brown-medium);
+            border-left: 4px solid var(--gold-classic);
         }
 
         .t-card:hover {
@@ -1013,7 +1004,7 @@
         }
 
         .t-stars {
-            color: var(--accent-gold);
+            color: var(--gold-classic);
             font-size: 1.2rem;
             margin-bottom: 20px;
         }
@@ -1022,7 +1013,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.2rem;
             line-height: 1.8;
-            color: var(--text-primary);
+            color: var(--text-dark);
             margin-bottom: 25px;
             font-style: italic;
         }
@@ -1030,26 +1021,26 @@
         .t-name {
             font-weight: 700;
             font-size: 1rem;
-            color: var(--brown-dark);
+            color: var(--black-primary);
         }
 
         .t-role {
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--text-dark-muted);
             margin-top: 5px;
         }
 
         /* ── CONTACT SECTION ── */
         #contact {
-            background: linear-gradient(135deg, var(--brown-dark) 0%, #3E2522 100%);
+            background: linear-gradient(135deg, var(--black-soft) 0%, var(--black-primary) 100%);
         }
 
         #contact .section-title {
-            color: var(--white-soft);
+            color: var(--white-pure);
         }
 
         #contact .section-tag {
-            color: var(--beige-soft);
+            color: var(--gold-classic);
         }
 
         .contact-grid {
@@ -1067,7 +1058,7 @@
         }
 
         .contact-info p {
-            color: rgba(255, 255, 255, 0.85);
+            color: var(--text-light-muted);
             line-height: 1.8;
             font-size: 1rem;
             margin-bottom: 35px;
@@ -1079,9 +1070,9 @@
             gap: 15px;
             margin-bottom: 20px;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
-            border: 1px solid rgba(245, 245, 220, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         .info-icon {
@@ -1089,7 +1080,7 @@
         }
 
         .info-text {
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--text-light);
             font-size: 0.95rem;
         }
 
@@ -1101,9 +1092,9 @@
 
         .contact-form input,
         .contact-form textarea {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1.5px solid rgba(245, 245, 220, 0.2);
-            color: var(--white-soft);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1.5px solid rgba(212, 175, 55, 0.2);
+            color: var(--white-pure);
             padding: 16px 20px;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.95rem;
@@ -1114,13 +1105,13 @@
 
         .contact-form input:focus,
         .contact-form textarea:focus {
-            border-color: var(--beige-soft);
-            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--gold-classic);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .contact-form input::placeholder,
         .contact-form textarea::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.4);
         }
 
         .contact-form textarea {
@@ -1129,8 +1120,8 @@
         }
 
         .form-btn {
-            background: var(--beige-primary);
-            color: var(--brown-dark);
+            background: linear-gradient(135deg, var(--gold-classic), var(--gold-dark));
+            color: var(--black-primary);
             border: none;
             padding: 16px;
             font-family: 'Montserrat', sans-serif;
@@ -1144,14 +1135,13 @@
         }
 
         .form-btn:hover {
-            background: var(--white-soft);
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(245, 245, 220, 0.2);
+            box-shadow: var(--shadow-gold-lg);
         }
 
         /* ── FOOTER ── */
         footer {
-            background: var(--brown-dark);
+            background: var(--black-primary);
             padding: 60px 5% 30px;
         }
 
@@ -1171,18 +1161,18 @@
 
         .footer-brand .nav-logo {
             font-size: 2rem;
-            color: var(--beige-primary);
+            color: var(--gold-classic);
             margin-bottom: 15px;
         }
 
         .footer-brand p {
-            color: rgba(245, 245, 220, 0.7);
+            color: var(--text-light-muted);
             font-size: 0.9rem;
             line-height: 1.8;
         }
 
         .footer-links h4 {
-            color: var(--beige-primary);
+            color: var(--gold-classic);
             font-size: 0.85rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
@@ -1198,18 +1188,18 @@
         }
 
         .footer-links a {
-            color: rgba(245, 245, 220, 0.7);
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: var(--white-soft);
+            color: var(--gold-classic);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(245, 245, 220, 0.15);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
             padding-top: 30px;
             display: flex;
             flex-direction: column;
@@ -1228,7 +1218,7 @@
 
         .footer-bottom p {
             font-size: 0.85rem;
-            color: rgba(245, 245, 220, 0.5);
+            color: rgba(255, 255, 255, 0.4);
         }
 
         .social-links {
@@ -1237,7 +1227,7 @@
         }
 
         .social-links a {
-            color: rgba(245, 245, 220, 0.6);
+            color: rgba(255, 255, 255, 0.5);
             text-decoration: none;
             font-size: 0.9rem;
             letter-spacing: 0.1em;
@@ -1245,7 +1235,7 @@
         }
 
         .social-links a:hover {
-            color: var(--white-soft);
+            color: var(--gold-classic);
         }
 
         /* ── WHATSAPP FLOAT ── */
@@ -1303,8 +1293,8 @@
             bottom: 100px;
             right: 25px;
             z-index: 400;
-            background: var(--brown-medium);
-            color: var(--white-soft);
+            background: var(--gold-classic);
+            color: var(--black-primary);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -1316,7 +1306,7 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-gold);
         }
 
         .back-to-top.visible {
@@ -1326,7 +1316,7 @@
 
         .back-to-top:hover {
             transform: translateY(-5px);
-            background: var(--brown-dark);
+            background: var(--gold-dark);
         }
     </style>
 </head>
@@ -1388,11 +1378,11 @@
             <div class="hero-badge">✦ Premium Readymade Garments ✦</div>
             <h1 class="hero-title">
                 Where Every<br>
-                <span class="brown-accent">Thread</span> Tells<br>
+                <span class="gold-accent">Thread</span> Tells<br>
                 <span class="outline">Your Story</span>
             </h1>
             <p class="hero-tagline">"Style for Every Soul, Fashion for Every Family"</p>
-            <p class="hero-desc">Discover our handpicked collection of premium readymade garments — crafted with love
+            <p class="hero-desc">Discover our handpicked collection of premium readymade garments crafted with love
                 for kids, men & women. Quality you can feel, style you'll love.</p>
             <div class="hero-btns">
                 <a href="#categories" class="btn-primary">Explore Collections</a>
@@ -1416,7 +1406,7 @@
     <section id="categories">
         <div class="section-header">
             <div class="section-tag reveal">Our Collections</div>
-            <h2 class="section-title reveal">Fashion for <em style="color: var(--brown-medium);">Every</em> Age</h2>
+            <h2 class="section-title reveal">Fashion for <em style="color: var(--gold-classic);">Every</em> Age</h2>
             <div class="divider reveal"></div>
         </div>
 
@@ -1430,7 +1420,7 @@
                 </div>
                 <div class="cat-info">
                     <div class="cat-name">Kids Wear</div>
-                    <div class="cat-desc">Colorful, comfy, and cute — outfits your little ones will love to wear every
+                    <div class="cat-desc">Colorful, comfy, and cute outfits your little ones will love to wear every
                         day.</div>
                     <div class="cat-count">✦ Frocks · Shirts · Sets · Ethnic</div>
                 </div>
@@ -1445,7 +1435,7 @@
                 </div>
                 <div class="cat-info">
                     <div class="cat-name">Men's Wear</div>
-                    <div class="cat-desc">Sharp, stylish, and sophisticated — from daily casuals to festive formals.
+                    <div class="cat-desc">Sharp, stylish, and sophisticated from daily casuals to festive formals.
                     </div>
                     <div class="cat-count">✦ Shirts · Kurtas · Trousers · Jackets</div>
                 </div>
@@ -1460,7 +1450,7 @@
                 </div>
                 <div class="cat-info">
                     <div class="cat-name">Women's Wear</div>
-                    <div class="cat-desc">Graceful, trendy, and vibrant — collections that celebrate every woman's
+                    <div class="cat-desc">Graceful, trendy, and vibrant collections that celebrate every woman's
                         beauty.</div>
                     <div class="cat-count">✦ Sarees · Suits · Kurtis · Lehengas</div>
                 </div>
@@ -1472,7 +1462,7 @@
     <section id="features">
         <div class="section-header">
             <div class="section-tag reveal">Why Choose Us</div>
-            <h2 class="section-title reveal">The Shree Omkar <em style="color: var(--brown-medium);">Difference</em>
+            <h2 class="section-title reveal">The Shree Omkar <em style="color: var(--gold-classic);">Difference</em>
             </h2>
             <div class="divider reveal"></div>
         </div>
@@ -1481,7 +1471,7 @@
             <div class="feature-item reveal">
                 <span class="feature-icon">🌟</span>
                 <div class="feature-title">Premium Quality</div>
-                <p class="feature-text">Every garment is carefully selected for fabric quality, finish, and durability —
+                <p class="feature-text">Every garment is carefully selected for fabric quality, finish, and durability
                     because you deserve the best.</p>
             </div>
             <div class="feature-item reveal">
@@ -1505,13 +1495,13 @@
             <div class="feature-item reveal">
                 <span class="feature-icon">🎉</span>
                 <div class="feature-title">Festive Specials</div>
-                <p class="feature-text">Special festive collections for Diwali, Navratri, Eid, Christmas — dressed to
+                <p class="feature-text">Special festive collections for Diwali, Navratri, Eid, Christmas dressed to
                     celebrate every occasion.</p>
             </div>
             <div class="feature-item reveal">
                 <span class="feature-icon">👨‍👩‍👧‍👦</span>
                 <div class="feature-title">Family Store</div>
-                <p class="feature-text">One roof for the whole family. Shop together, save together — a complete family
+                <p class="feature-text">One roof for the whole family. Shop together, save together a complete family
                     fashion destination.</p>
             </div>
         </div>
@@ -1528,12 +1518,12 @@
             <div class="section-tag reveal">Our Story</div>
             <h2 class="section-title reveal">Shree Omkar Fashion</h2>
             <div class="divider reveal"></div>
-            <p class="reveal" style="color: var(--text-secondary); line-height: 1.9; margin-bottom: 20px;">Founded with
+            <p class="reveal" style="color: var(--text-dark-muted); line-height: 1.9; margin-bottom: 20px;">Founded with
                 a passion for quality and affordability, Shree Omkar Fashion has been dressing families across our
-                community with pride. We believe every person — young or old, man or woman — deserves to feel confident
+                community with pride. We believe every person young or old, man or woman deserves to feel confident
                 and stylish.</p>
-            <p class="reveal" style="color: var(--text-secondary); line-height: 1.9;">Our store offers a wide and
-                carefully curated range of readymade garments — from casual everyday wear to dazzling festive outfits —
+            <p class="reveal" style="color: var(--text-dark-muted); line-height: 1.9;">Our store offers a wide and
+                carefully curated range of readymade garments from casual everyday wear to dazzling festive outfits
                 all under one roof. Step in and experience the difference quality makes.</p>
 
             <div class="about-stats reveal">
@@ -1571,14 +1561,14 @@
             </div>
             <div class="t-card reveal">
                 <div class="t-stars">★★★★★</div>
-                <p class="t-quote">"Bought my son's entire school wardrobe from here. Great kids section — so many
+                <p class="t-quote">"Bought my son's entire school wardrobe from here. Great kids section so many
                     options! The staff is very helpful and the prices are unbeatable."</p>
                 <div class="t-name">Ramesh Patel</div>
                 <div class="t-role">Satisfied Parent</div>
             </div>
             <div class="t-card reveal">
                 <div class="t-stars">★★★★★</div>
-                <p class="t-quote">"I love the women's collection here — modern styles with traditional elegance. Shree
+                <p class="t-quote">"I love the women's collection here modern styles with traditional elegance. Shree
                     Omkar Fashion is my go-to shop for every occasion."</p>
                 <div class="t-name">Kavya Desai</div>
                 <div class="t-role">Fashion Enthusiast</div>
@@ -1600,19 +1590,20 @@
                     — or drop us a message below.</p>
                 <div class="info-row">
                     <span class="info-icon">📍</span>
-                    <span class="info-text">123 Fashion Street, MG Road, Ahmedabad, Gujarat - 380001</span>
+                    <span class="info-text">Shop No- 19, Jalaram Nagar, Near Mangal Pandey Hall, Godadara, Surat,
+                        Gujarat- 394210</span>
                 </div>
                 <div class="info-row">
                     <span class="info-icon">📞</span>
-                    <span class="info-text">+91 98765 43210</span>
+                    <span class="info-text">+91 83599 70016</span>
                 </div>
                 <div class="info-row">
                     <span class="info-icon">🕐</span>
-                    <span class="info-text">Mon – Sat: 10:00 AM – 9:00 PM<br>Sunday: 11:00 AM – 7:00 PM</span>
+                    <span class="info-text">Mon – Sat: 08:00 AM – 10:30 PM<br>Sunday: 08:00 AM – 10:30 PM</span>
                 </div>
                 <div class="info-row">
                     <span class="info-icon">📧</span>
-                    <span class="info-text">hello@shreeomkarfashion.com</span>
+                    <span class="info-text">shreeomkarfashion.8l@gmail.com</span>
                 </div>
             </div>
 
@@ -1633,7 +1624,7 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <div class="nav-logo">Shree <span>Omkar</span> Fashion</div>
-                <p>Style for Every Soul — Premium readymade garments for the whole family, at prices you'll love.</p>
+                <p>Style for Every Soul Premium readymade garments for the whole family, at prices you'll love.</p>
             </div>
 
             <div class="footer-links">
@@ -1658,7 +1649,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 Shree Omkar Fashion. All rights reserved. Made with ❤️ in Gujarat.</p>
+            <p>© 2026 Shree Omkar Fashion. All rights reserved.</p>
             <div class="social-links">
                 <a href="#">Facebook</a>
                 <a href="#">Instagram</a>
@@ -1668,7 +1659,7 @@
     </footer>
 
     <!-- WHATSAPP FLOAT -->
-    <a class="whatsapp-float" href="https://wa.me/919876543210" target="_blank" title="Chat on WhatsApp"
+    <a class="whatsapp-float" href="https://wa.me/918359970016" target="_blank" title="Chat on WhatsApp"
         aria-label="Chat on WhatsApp">💬</a>
 
     <!-- BACK TO TOP -->
@@ -1704,7 +1695,6 @@
             menuBtn.addEventListener('click', toggleMenu);
             navOverlay.addEventListener('click', toggleMenu);
 
-            // Close menu when clicking a link
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     if (navLinks.classList.contains('active')) {
@@ -1809,8 +1799,8 @@
                 const btn = e.target.querySelector('.form-btn');
                 const originalText = btn.textContent;
                 btn.textContent = '✓ Message Sent!';
-                btn.style.background = '#8B5E3C';
-                btn.style.color = '#FFFFFF';
+                btn.style.background = '#D4AF37';
+                btn.style.color = '#000000';
                 btn.disabled = true;
 
                 setTimeout(() => {
