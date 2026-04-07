@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Omkar Fashion – Style for Every Soul</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c9a84c;
+            --gold-light: #e8c97a;
+            --gold-dark: #8a6a1f;
+            --cream: #fdf8f0;
+            --deep: #1a1209;
+            --warm: #2e1f0a;
+            --text: #3d2b0f;
+            --accent: #d44f1e;
+            --soft: #f5ede0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ── CURSOR ── */
+        .cursor {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background: var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform .15s, background .3s;
+            mix-blend-mode: multiply;
+        }
+
+        .cursor-ring {
+            position: fixed;
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: all .35s ease;
+        }
+
+        /* ── LOADER ── */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: var(--deep);
+            z-index: 9000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .loader-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--gold);
+            letter-spacing: .12em;
+            opacity: 0;
+            animation: fadeUp .8s .3s forwards;
+        }
+
+        .loader-sub {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--gold-light);
+            font-size: 1rem;
+            letter-spacing: .35em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeUp .8s .7s forwards;
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 2px;
+            background: #333;
+            border-radius: 1px;
+            overflow: hidden;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeUp .6s 1s forwards;
+        }
+
+        .loader-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
+            width: 0;
+            animation: fill 1.8s 1.2s ease forwards;
+        }
+
+        @keyframes fill {
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 6vw;
+            background: rgba(253, 248, 240, .92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(201, 168, 76, .2);
+            transform: translateY(-100%);
+            transition: transform .6s ease, box-shadow .4s;
+        }
+
+        nav.visible {
+            transform: translateY(0);
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--warm);
+            letter-spacing: .06em;
+        }
+
+        .nav-logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: .85rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--text);
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 3px;
+            transition: color .3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: width .35s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-dark);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--deep);
+            padding: 9px 22px;
+            border: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: .8rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background .3s, transform .2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ── HERO ── */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 70% 40%, rgba(201, 168, 76, .18) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(212, 79, 30, .1) 0%, transparent 50%);
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            opacity: .06;
+            background-image: linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 8vw;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-size: .72rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp 1s 2.5s forwards;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            line-height: 1.05;
+            color: var(--cream);
+            font-weight: 900;
+            opacity: 0;
+            animation: fadeUp 1s 2.8s forwards;
+        }
+
+        .hero-title .gold {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .hero-title .outline {
+            -webkit-text-stroke: 2px var(--gold-light);
+            color: transparent;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--gold-light);
+            margin-top: 18px;
+            letter-spacing: .06em;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeUp 1s 3.1s forwards;
+        }
+
+        .hero-desc {
+            color: rgba(253, 248, 240, .6);
+            font-size: .95rem;
+            max-width: 480px;
+            margin-top: 16px;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeUp 1s 3.4s forwards;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 1s 3.7s forwards;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--deep);
+            padding: 14px 36px;
+            font-size: .85rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            transition: transform .3s, box-shadow .3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(201, 168, 76, .4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--gold-light);
+            color: var(--gold-light);
+            padding: 14px 36px;
+            font-size: .85rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            transition: all .3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: var(--gold-light);
+            color: var(--deep);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold);
+            font-size: .7rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeUp 1s 4s forwards;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(var(--gold), transparent);
+            animation: scrollPulse 2s infinite;
+        }
+
+        @keyframes scrollPulse {
+
+            0%,
+            100% {
+                opacity: .3;
+                transform: scaleY(1)
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1.2)
+            }
+        }
+
+        /* ── FLOATING FABRIC SHAPES ── */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(201, 168, 76, .06);
+            border: 1px solid rgba(201, 168, 76, .1);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            right: 5%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 180px;
+            height: 180px;
+            top: 60%;
+            right: 20%;
+            animation-delay: 2s;
+        }
+
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            right: 35%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0)
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(10deg)
+            }
+        }
+
+        /* ── MARQUEE ── */
+        .marquee-wrap {
+            background: var(--gold);
+            overflow: hidden;
+            padding: 14px 0;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 0;
+            white-space: nowrap;
+            animation: marquee 18s linear infinite;
+        }
+
+        .marquee-track span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            letter-spacing: .2em;
+            color: var(--deep);
+            padding: 0 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .marquee-track span::after {
+            content: '✦';
+            margin-left: 40px;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0)
+            }
+
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* ── SECTION COMMON ── */
+        section {
+            padding: 100px 8vw;
+        }
+
+        .section-tag {
+            font-size: .72rem;
+            letter-spacing: .35em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: var(--warm);
+            line-height: 1.15;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px 0 30px;
+        }
+
+        /* ── CATEGORIES ── */
+        #categories {
+            background: var(--soft);
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 50px;
+        }
+
+        .cat-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--cream);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .06);
+            transition: transform .4s, box-shadow .4s;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .12);
+        }
+
+        .cat-card:hover .cat-overlay {
+            opacity: 1;
+        }
+
+        .cat-card:hover .cat-img {
+            transform: scale(1.08);
+        }
+
+        .cat-img-wrap {
+            height: 360px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cat-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        .cat-emoji {
+            width: 100%;
+            height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            transition: transform .6s;
+        }
+
+        .cat-card:hover .cat-emoji {
+            transform: scale(1.1);
+        }
+
+        .cat-bg-kids {
+            background: linear-gradient(135deg, #fff5e6, #ffd8a8);
+        }
+
+        .cat-bg-men {
+            background: linear-gradient(135deg, #e8f0fe, #c5d5f7);
+        }
+
+        .cat-bg-women {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+        }
+
+        .cat-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 18, 9, .75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity .4s;
+        }
+
+        .cat-btn {
+            border: 1.5px solid var(--gold);
+            color: var(--gold);
+            padding: 10px 28px;
+            font-size: .78rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            background: transparent;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .cat-btn:hover {
+            background: var(--gold);
+            color: var(--deep);
+        }
+
+        .cat-info {
+            padding: 24px 26px;
+        }
+
+        .cat-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--warm);
+        }
+
+        .cat-desc {
+            font-size: .85rem;
+            color: #7a5c35;
+            margin-top: 6px;
+            line-height: 1.6;
+        }
+
+        .cat-count {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: .72rem;
+            letter-spacing: .2em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        /* ── FEATURES ── */
+        #features {
+            background: var(--deep);
+        }
+
+        #features .section-title {
+            color: var(--cream);
+        }
+
+        #features .section-tag {
+            color: var(--gold-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--gold-light);
+            margin-bottom: 10px;
+        }
+
+        .feature-text {
+            font-size: .85rem;
+            color: rgba(253, 248, 240, .55);
+            line-height: 1.7;
+        }
+
+        .feature-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .7s, transform .7s;
+        }
+
+        .feature-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── ABOUT ── */
+        #about {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            background: var(--cream);
+        }
+
+        .about-visual {
+            flex: 1;
+            min-width: 280px;
+            position: relative;
+            height: 460px;
+        }
+
+        .about-card {
+            position: absolute;
+            background: var(--soft);
+            border: 1px solid rgba(201, 168, 76, .3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, .08);
+            transition: transform .4s;
+        }
+
+        .about-card-1 {
+            width: 260px;
+            height: 320px;
+            top: 0;
+            left: 0;
+        }
+
+        .about-card-2 {
+            width: 200px;
+            height: 240px;
+            bottom: 0;
+            right: 0;
+            background: var(--gold);
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold-dark);
+            font-weight: 900;
+        }
+
+        .stat-label {
+            font-size: .75rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: #7a5c35;
+            margin-top: 4px;
+        }
+
+        /* ── TESTIMONIALS ── */
+        #testimonials {
+            background: var(--soft);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 50px;
+        }
+
+        .t-card {
+            background: var(--cream);
+            padding: 36px 30px;
+            border-top: 3px solid var(--gold);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .7s, transform .7s;
+        }
+
+        .t-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .t-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .t-stars {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .t-name {
+            font-weight: 600;
+            font-size: .88rem;
+            color: var(--warm);
+        }
+
+        .t-role {
+            font-size: .75rem;
+            color: #9a7a50;
+            letter-spacing: .1em;
+        }
+
+        /* ── CONTACT ── */
+        #contact {
+            background: var(--warm);
+        }
+
+        #contact .section-title {
+            color: var(--cream);
+        }
+
+        #contact .section-tag {
+            color: var(--gold-light);
+        }
+
+        #contact .divider {
+            background: var(--gold-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        @media(max-width:700px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-info {}
+
+        .contact-info p {
+            color: rgba(253, 248, 240, .7);
+            line-height: 1.8;
+            font-size: .95rem;
+            margin-bottom: 28px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .info-icon {
+            font-size: 1.3rem;
+        }
+
+        .info-text {
+            color: rgba(253, 248, 240, .85);
+            font-size: .88rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(201, 168, 76, .3);
+            color: var(--cream);
+            padding: 14px 18px;
+            font-family: 'Outfit', sans-serif;
+            font-size: .88rem;
+            outline: none;
+            resize: none;
+            transition: border .3s;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(253, 248, 240, .3);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--gold);
+        }
+
+        .contact-form textarea {
+            height: 130px;
+        }
+
+        .form-btn {
+            background: var(--gold);
+            color: var(--deep);
+            border: none;
+            padding: 14px;
+            font-family: 'Outfit', sans-serif;
+            font-size: .85rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background .3s, transform .2s;
+        }
+
+        .form-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--deep);
+            padding: 50px 8vw 30px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .nav-logo {
+            font-size: 1.8rem;
+        }
+
+        .footer-brand p {
+            color: rgba(253, 248, 240, .4);
+            font-size: .83rem;
+            max-width: 280px;
+            margin-top: 10px;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            color: var(--gold);
+            font-size: .75rem;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(253, 248, 240, .5);
+            text-decoration: none;
+            font-size: .85rem;
+            transition: color .3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(201, 168, 76, .15);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom p {
+            font-size: .78rem;
+            color: rgba(253, 248, 240, .3);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            color: rgba(253, 248, 240, .4);
+            font-size: .85rem;
+            letter-spacing: .1em;
+            text-decoration: none;
+            transition: color .3s;
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+        }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:768px) {
+            .nav-links {
+                display: none;
+            }
+
+            #about {
+                flex-direction: column;
+            }
+
+            .about-visual {
+                width: 100%;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* ── ANIMATED SPARKLES ── */
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9997;
+            font-size: 1rem;
+            opacity: 0;
+            animation: sparkle-anim .6s ease-out forwards;
+        }
+
+        @keyframes sparkle-anim {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1)
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(var(--dx), var(--dy)) scale(0)
+            }
+        }
+
+        /* ── TOP BANNER ── */
+        .top-banner {
+            background: var(--gold);
+            text-align: center;
+            padding: 9px;
+            font-size: .78rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--deep);
+            font-weight: 600;
+        }
+
+        /* ── WHATSAPP FLOAT ── */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 400;
+            background: #25D366;
+            color: white;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 6px 30px rgba(37, 211, 102, .5);
+            animation: pulse-green 2s infinite;
+            text-decoration: none;
+            transition: transform .3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15);
+        }
+
+        @keyframes pulse-green {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 30px rgba(37, 211, 102, .5)
+            }
+
+            50% {
+                box-shadow: 0 6px 50px rgba(37, 211, 102, .8)
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="loader-logo">Shree Omkar Fashion</div>
+        <div class="loader-sub">Style for Every Soul</div>
+        <div class="loader-bar">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- WHATSAPP FLOAT -->
+    <a class="whatsapp-float" href="https://wa.me/919999999999" target="_blank" title="Chat on WhatsApp">💬</a>
+
+    <!-- TOP BANNER -->
+    <div class="top-banner">✦ Grand Collection 2025 Now Available — Kids · Men · Women ✦ Visit Us Today ✦</div>
+
+    <!-- NAV -->
+    <nav id="navbar">
+        <div class="nav-logo">Shree <span>Omkar</span> Fashion</div>
+        <ul class="nav-links">
+            <li><a href="#categories">Collections</a></li>
+            <li><a href="#features">Why Us</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Visit
+            Store</button>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">✦ Premium Readymade Garments ✦</div>
+            <h1 class="hero-title">
+                Where Every<br>
+                <span class="gold">Thread</span> Tells<br>
+                <span class="outline">Your Story</span>
+            </h1>
+            <p class="hero-tagline">"Style for Every Soul, Fashion for Every Family"</p>
+            <p class="hero-desc">Discover our handpicked collection of premium readymade garments — crafted with love
+                for kids, men & women. Quality you can feel, style you'll love.</p>
+            <div class="hero-btns">
+                <a href="#categories" class="btn-primary">Explore Collections</a>
+                <a href="#contact" class="btn-outline">Find Our Store</a>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+        <div class="marquee-track" id="marquee">
+            <span>Kids Wear</span><span>Men's Collection</span><span>Women's Fashion</span>
+            <span>Premium Quality</span><span>Latest Designs</span><span>Festive Special</span>
+            <span>Shree Omkar Fashion</span><span>Party Wear</span><span>Casual Wear</span>
+            <span>Kids Wear</span><span>Men's Collection</span><span>Women's Fashion</span>
+            <span>Premium Quality</span><span>Latest Designs</span><span>Festive Special</span>
+            <span>Shree Omkar Fashion</span><span>Party Wear</span><span>Casual Wear</span>
+        </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section id="categories">
+        <div class="section-tag reveal">Our Collections</div>
+        <h2 class="section-title reveal">Fashion for <em>Every</em> Age</h2>
+        <div class="divider reveal"></div>
+        <div class="cat-grid">
+            <div class="cat-card reveal">
+                <div class="cat-img-wrap">
+                    <div class="cat-emoji cat-bg-kids">👗</div>
+                </div>
+                <div class="cat-overlay"><button class="cat-btn">Explore</button></div>
+                <div class="cat-info">
+                    <div class="cat-name">Kids Wear</div>
+                    <div class="cat-desc">Colorful, comfy, and cute — outfits your little ones will love to wear every
+                        day.</div>
+                    <div class="cat-count">✦ Frocks · Shirts · Sets · Ethnic</div>
+                </div>
+            </div>
+            <div class="cat-card reveal">
+                <div class="cat-img-wrap">
+                    <div class="cat-emoji cat-bg-men">👔</div>
+                </div>
+                <div class="cat-overlay"><button class="cat-btn">Explore</button></div>
+                <div class="cat-info">
+                    <div class="cat-name">Men's Wear</div>
+                    <div class="cat-desc">Sharp, stylish, and sophisticated — from daily casuals to festive formals.
+                    </div>
+                    <div class="cat-count">✦ Shirts · Kurtas · Trousers · Jackets</div>
+                </div>
+            </div>
+            <div class="cat-card reveal">
+                <div class="cat-img-wrap">
+                    <div class="cat-emoji cat-bg-women">👘</div>
+                </div>
+                <div class="cat-overlay"><button class="cat-btn">Explore</button></div>
+                <div class="cat-info">
+                    <div class="cat-name">Women's Wear</div>
+                    <div class="cat-desc">Graceful, trendy, and vibrant — collections that celebrate every woman's
+                        beauty.</div>
+                    <div class="cat-count">✦ Sarees · Suits · Kurtis · Lehengas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+        <div class="section-tag reveal">Why Choose Us</div>
+        <h2 class="section-title reveal">The Shree Omkar <em style="color:var(--gold)">Difference</em></h2>
+        <div class="divider reveal"></div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <span class="feature-icon">🌟</span>
+                <div class="feature-title">Premium Quality</div>
+                <p class="feature-text">Every garment is carefully selected for fabric quality, finish, and durability —
+                    because you deserve the best.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">💰</span>
+                <div class="feature-title">Best Prices</div>
+                <p class="feature-text">Affordable fashion for the whole family. Get the latest styles without burning a
+                    hole in your pocket.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎨</span>
+                <div class="feature-title">Latest Designs</div>
+                <p class="feature-text">We keep our collection fresh with the latest trends in Indian and western
+                    fashion, updated regularly.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🤝</span>
+                <div class="feature-title">Trusted Service</div>
+                <p class="feature-text">Years of experience and thousands of happy customers make us the most trusted
+                    garment shop in town.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎉</span>
+                <div class="feature-title">Festive Specials</div>
+                <p class="feature-text">Special festive collections for Diwali, Navratri, Eid, Christmas — dressed to
+                    celebrate every occasion.</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">👨‍👩‍👧‍👦</span>
+                <div class="feature-title">Family Store</div>
+                <p class="feature-text">One roof for the whole family. Shop together, save together — a complete family
+                    fashion destination.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="about-visual">
+            <div class="about-card about-card-1">🏪</div>
+            <div class="about-card about-card-2">✦</div>
+        </div>
+        <div class="about-content">
+            <div class="section-tag reveal">Our Story</div>
+            <h2 class="section-title reveal">Shree Omkar Fashion</h2>
+            <div class="divider reveal"></div>
+            <p class="reveal" style="color:#6b4e2a;line-height:1.9;font-size:.95rem;margin-bottom:16px;">Founded with a
+                passion for quality and affordability, Shree Omkar Fashion has been dressing families across our
+                community with pride. We believe every person — young or old, man or woman — deserves to feel confident
+                and stylish.</p>
+            <p class="reveal" style="color:#6b4e2a;line-height:1.9;font-size:.95rem;">Our store offers a wide and
+                carefully curated range of readymade garments — from casual everyday wear to dazzling festive outfits —
+                all under one roof. Step in and experience the difference quality makes.</p>
+            <div class="about-stats reveal">
+                <div class="stat">
+                    <div class="stat-num" id="count1">0</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" id="count2">0</div>
+                    <div class="stat-label">Collections</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num" id="count3">0</div>
+                    <div class="stat-label">Years of Trust</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="section-tag reveal">Customer Love</div>
+        <h2 class="section-title reveal">What Our Customers Say</h2>
+        <div class="divider reveal"></div>
+        <div class="testimonials-grid">
+            <div class="t-card">
+                <div class="t-stars">★★★★★</div>
+                <p class="t-quote">"Best garment shop in the area! The quality of fabric and designs are always
+                    top-notch. My whole family shops here for every festival."</p>
+                <div class="t-name">Priya Sharma</div>
+                <div class="t-role">Regular Customer</div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">★★★★★</div>
+                <p class="t-quote">"Bought my son's entire school wardrobe from here. Great kids section — so many
+                    options! The staff is very helpful and the prices are unbeatable."</p>
+                <div class="t-name">Ramesh Patel</div>
+                <div class="t-role">Satisfied Parent</div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">★★★★★</div>
+                <p class="t-quote">"I love the women's collection here — modern styles with traditional elegance. Shree
+                    Omkar Fashion is my go-to shop for every occasion."</p>
+                <div class="t-name">Kavya Desai</div>
+                <div class="t-role">Fashion Enthusiast</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-tag reveal">Get In Touch</div>
+        <h2 class="section-title reveal">Visit Our Store</h2>
+        <div class="divider reveal"></div>
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <p>We'd love to welcome you to Shree Omkar Fashion. Stop by our store and explore our latest collections
+                    — or drop us a message below.</p>
+                <div class="info-row"><span class="info-icon">📍</span><span class="info-text">Your Shop Address, Street
+                        Name, City, Gujarat</span></div>
+                <div class="info-row"><span class="info-icon">📞</span><span class="info-text">+91 99999 99999</span>
+                </div>
+                <div class="info-row"><span class="info-icon">🕐</span><span class="info-text">Mon – Sat: 10:00 AM –
+                        9:00 PM<br>Sunday: 11:00 AM – 7:00 PM</span></div>
+                <div class="info-row"><span class="info-icon">📧</span><span
+                        class="info-text">shreeomakarfashion@gmail.com</span></div>
+            </div>
+            <div class="reveal">
+                <form class="contact-form" onsubmit="handleForm(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="tel" placeholder="Your Phone Number" required>
+                    <input type="text" placeholder="What are you looking for?">
+                    <textarea placeholder="Your message..."></textarea>
+                    <button type="submit" class="form-btn">Send Message ✦</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="nav-logo">Shree <span>Omkar</span> Fashion</div>
+                <p>Style for Every Soul — Premium readymade garments for the whole family, at prices you'll love.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="#categories">Kids Wear</a></li>
+                    <li><a href="#categories">Men's Wear</a></li>
+                    <li><a href="#categories">Women's Wear</a></li>
+                    <li><a href="#categories">Festive Special</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#features">Why Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Shree Omkar Fashion. All rights reserved. Made with ❤️ in Gujarat.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── LOADER ──
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.transition = 'opacity .8s';
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                    document.getElementById('navbar').classList.add('visible');
+                }, 800);
+            }, 3200);
+        });
+
+        // ── CURSOR ──
+        const cursor = document.getElementById('cursor');
+        const ring = document.getElementById('cursorRing');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            setTimeout(() => {
+                ring.style.left = e.clientX + 'px';
+                ring.style.top = e.clientY + 'px';
+            }, 80);
+        });
+        document.querySelectorAll('a,button').forEach(el => {
+            el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2)'; ring.style.transform = 'translate(-50%,-50%) scale(1.5)'; });
+            el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.transform = 'translate(-50%,-50%) scale(1)'; });
+        });
+
+        // ── SPARKLES ON CLICK ──
+        document.addEventListener('click', (e) => {
+            const emojis = ['✨', '⭐', '💫', '✦', '🌟'];
+            for (let i = 0; i < 5; i++) {
+                const s = document.createElement('div');
+                s.className = 'sparkle';
+                s.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                s.style.left = e.clientX + 'px';
+                s.style.top = e.clientY + 'px';
+                s.style.setProperty('--dx', (Math.random() - 0.5) * 80 + 'px');
+                s.style.setProperty('--dy', (Math.random() - 1) * 80 + 'px');
+                document.body.appendChild(s);
+                setTimeout(() => s.remove(), 700);
+            }
+        });
+
+        // ── NAVBAR SCROLL ──
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ── SCROLL REVEAL ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 80);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal, .feature-item, .t-card').forEach(el => observer.observe(el));
+
+        // ── COUNT UP ANIMATION ──
+        const countTargets = [{ el: 'count1', target: 5000, suffix: '+' }, { el: 'count2', target: 500, suffix: '+' }, { el: 'count3', target: 10, suffix: '+' }];
+        let counted = false;
+        const aboutSection = document.getElementById('about');
+        const countObserver = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting && !counted) {
+                counted = true;
+                countTargets.forEach(({ el, target, suffix }) => {
+                    const elem = document.getElementById(el);
+                    let current = 0;
+                    const step = Math.ceil(target / 60);
+                    const timer = setInterval(() => {
+                        current = Math.min(current + step, target);
+                        elem.textContent = current.toLocaleString() + suffix;
+                        if (current >= target) clearInterval(timer);
+                    }, 30);
+                });
+            }
+        }, { threshold: 0.4 });
+        countObserver.observe(aboutSection);
+
+        // ── FORM HANDLER ──
+        function handleForm(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('.form-btn');
+            btn.textContent = '✓ Message Sent!';
+            btn.style.background = '#2ecc71';
+            setTimeout(() => { btn.textContent = 'Send Message ✦'; btn.style.background = ''; e.target.reset(); }, 3000);
+        }
+
+        // ── ABOUT CARDS HOVER ──
+        document.querySelectorAll('.about-card').forEach(card => {
+            card.addEventListener('mouseover', () => card.style.transform = 'rotate(-2deg) scale(1.04)');
+            card.addEventListener('mouseout', () => card.style.transform = '');
+        });
+    </script>
+</body>
+
+</html>
