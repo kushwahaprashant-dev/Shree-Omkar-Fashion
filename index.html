@@ -1577,6 +1577,7 @@
     </section>
 
     <!-- CONTACT -->
+    <!-- CONTACT SECTION (REPLACE EXISTING) -->
     <section id="contact">
         <div class="section-header">
             <div class="section-tag reveal">Get In Touch</div>
@@ -1608,13 +1609,21 @@
             </div>
 
             <div class="reveal">
-                <form class="contact-form" onsubmit="handleForm(event)">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="tel" placeholder="Your Phone Number" required>
-                    <input type="text" placeholder="What are you looking for?">
-                    <textarea placeholder="Your message..."></textarea>
-                    <button type="submit" class="form-btn">Send Message ✦</button>
-                </form>
+                <!-- CONTACT FIELDS FOR WHATSAPP -->
+                <div class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                    <input type="text" name="looking_for" placeholder="What are you looking for?">
+                    <textarea name="message" placeholder="Your message..."></textarea>
+                    
+                    <!-- WHATSAPP QUICK MESSAGE BUTTON -->
+                    <button type="button" class="form-btn" id="whatsappBtn" style="background: #25D366; color: white; margin-top: 10px;">
+                        💬 Send Inquiry via WhatsApp
+                    </button>
+                    <p style="font-size: 0.8rem; color: var(--text-dark-muted); text-align: center; margin-top: 15px;">
+                        Clicking above will open WhatsApp with your details pre-filled.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -1793,24 +1802,31 @@
 
             if (aboutSection) countObserver.observe(aboutSection);
 
-            // ── FORM HANDLER ──
-            window.handleForm = function (e) {
-                e.preventDefault();
-                const btn = e.target.querySelector('.form-btn');
-                const originalText = btn.textContent;
-                btn.textContent = '✓ Message Sent!';
-                btn.style.background = '#D4AF37';
-                btn.style.color = '#000000';
-                btn.disabled = true;
+            // ────────────────────────────────────────────────────────────────
+            // ✨ NEW: WHATSAPP QUICK MESSAGE BUTTON
+            // ────────────────────────────────────────────────────────────────
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            if (whatsappBtn) {
+                whatsappBtn.addEventListener('click', function () {
+                    // Get values from the email form fields
+                    const name = document.querySelector('input[name="name"]')?.value.trim() || '';
+                    const phone = document.querySelector('input[name="phone"]')?.value.trim() || '';
+                    const looking = document.querySelector('input[name="looking_for"]')?.value.trim() || '';
+                    const message = document.querySelector('textarea[name="message"]')?.value.trim() || '';
 
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '';
-                    btn.style.color = '';
-                    btn.disabled = false;
-                    e.target.reset();
-                }, 3000);
-            };
+                    if (!name || !phone) {
+                        alert('Please enter your name and phone number.');
+                        return;
+                    }
+
+                    const text = `New enquiry from ${name} (${phone}):%0A%0ALooking for: ${looking}%0AMessage: ${message}`;
+                    const waNumber = '918359970016'; // Your WhatsApp number (country code + number, no '+')
+                    const url = `https://wa.me/${waNumber}?text=${text}`;
+                    window.open(url, '_blank');
+                });
+            }
+
+
 
             // ── SMOOTH SCROLL FOR ANCHOR LINKS ──
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
