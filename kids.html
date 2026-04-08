@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Kids Wear – Shree Omkar Fashion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Reusing style tokens from index.html -->
+    <style>
+        :root {
+            --black-primary: #000000;
+            --black-soft: #121212;
+            --white-pure: #FFFFFF;
+            --white-soft: #F8F8F8;
+            --gold-classic: #D4AF37;
+            --gold-dark: #B8962E;
+            --gold-light: #E8C96A;
+            --text-dark: #121212;
+            --text-dark-muted: rgba(18, 18, 18, 0.7);
+            --text-light-muted: rgba(255, 255, 255, 0.9);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.2);
+            --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--white-soft); color: var(--text-dark); font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        /* HEADER */
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding: 12px 0; }
+        .nav-container { display: flex; align-items: center; justify-content: space-between; padding: 0 5%; }
+        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; }
+        .nav-logo span { color: var(--gold-classic); font-style: italic; }
+        .nav-links { list-style: none; display: flex; gap: 30px; }
+        .nav-links a { font-size: 0.85rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.1em; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold-classic); }
+        .back-home { color: var(--gold-classic) !important; font-weight: 700 !important; }
+
+        /* HERO */
+        .page-hero { height: 60vh; background: var(--black-primary); position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white-pure); margin-top: 60px; overflow: hidden; }
+        .hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(212,175,55,0.15), transparent); }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); position: relative; z-index: 2; margin-bottom: 10px; }
+        .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-classic); position: relative; z-index: 2; }
+
+        /* GALLERY */
+        .product-section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--black-primary); }
+        .divider { width: 60px; height: 3px; background: var(--gold-classic); margin: 20px auto; }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; }
+        .product-card { background: var(--white-pure); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); transition: 0.4s; border: 1px solid rgba(212,175,55,0.1); }
+        .product-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-gold); border-color: var(--gold-classic); }
+        .product-img { height: 350px; background: #EEE; display: flex; align-items: center; justify-content: center; font-size: 5rem; transition: 0.6s; }
+        .product-card:hover .product-img { transform: scale(1.05); }
+        .product-info { padding: 25px; text-align: center; }
+        .product-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; }
+        .product-desc { font-size: 0.9rem; color: var(--text-dark-muted); margin-bottom: 20px; }
+        .inquiry-btn { display: inline-block; padding: 12px 30px; border: 1.5px solid var(--gold-classic); color: var(--gold-classic); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; border-radius: 50px; transition: 0.3s; }
+        .inquiry-btn:hover { background: var(--gold-classic); color: var(--black-primary); }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--black-primary);
+            padding: 60px 5% 30px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-top {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+        }
+
+        .footer-brand .nav-logo {
+            font-size: 2rem;
+            color: var(--gold-classic);
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            color: var(--text-light-muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            color: var(--gold-classic);
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-classic);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            padding-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+            .footer-bottom p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .social-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--gold-classic);
+        }
+
+        /* ── WHATSAPP FLOAT ── */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 500;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* ── BACK TO TOP BUTTON ── */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            z-index: 400;
+            background: var(--gold-classic);
+            color: var(--black-primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: var(--gold-dark);
+        }
+
+        /* ANIMATIONS */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s var(--ease-premium); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Shree <span>Omkar</span> Fashion</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="back-home">← Back to Home</a></li>
+                <li><a href="mens.html">Men's Wear</a></li>
+                <li><a href="womens.html">Women's Wear</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Kids <span style="color: var(--gold-classic);">Collection</span></h1>
+            <p class="hero-subtitle">Adorable · Elegant · Comfortable</p>
+        </div>
+    </section>
+
+    <section class="product-section">
+        <div class="section-header reveal">
+            <h2>Our Little Masterpieces</h2>
+            <div class="divider"></div>
+            <p>Handpicked styles for infants, toddlers, and teens.</p>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card reveal">
+                <div class="product-img" style="background: linear-gradient(135deg, #FDFCFB 0%, #E2D1C3 100%);">👗</div>
+                <div class="product-info">
+                    <h3 class="product-name">Princess Frocks</h3>
+                    <p class="product-desc">Elegant party wear frocks with delicate lace and soft fabric.</p>
+                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Princess Frocks from the Kids Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card reveal">
+                <div class="product-img" style="background: linear-gradient(135deg, #E0C3FC 0%, #8EC5FC 100%);">👕</div>
+                <div class="product-info">
+                    <h3 class="product-name">Boys' Formal Sets</h3>
+                    <p class="product-desc">Sharp waistcoats and shirts for weddings and special occasions.</p>
+                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Boys Formal Sets from the Kids Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card reveal">
+                <div class="product-img" style="background: linear-gradient(135deg, #FFF1EB 0%, #ACE0F9 100%);">🧸</div>
+                <div class="product-info">
+                    <h3 class="product-name">Infant Daily Wear</h3>
+                    <p class="product-desc">Pure cotton onesies and sets designed for ultimate comfort.</p>
+                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Infant Daily Wear from the Kids Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card reveal">
+                <div class="product-img" style="background: linear-gradient(135deg, #F6D365 0%, #FDA085 100%);">👘</div>
+                <div class="product-info">
+                    <h3 class="product-name">Traditional Ethnic Wear</h3>
+                    <p class="product-desc">Miniature Lehengas and Dhoti-Kurtas for festive celebrations.</p>
+                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Traditional ethnic wear from the Kids Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card reveal">
+                <div class="product-img" style="background: linear-gradient(135deg, #A1C4FD 0%, #C2E9FB 100%);">🧢</div>
+                <div class="product-info">
+                    <h3 class="product-name">Casual Denims & Tees</h3>
+                    <p class="product-desc">Durable and stylish everyday outfits for active kids.</p>
+                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Casual Denims from the Kids Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card reveal">
+                <div class="product-img" style="background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%);">🎀</div>
+                <div class="product-info">
+                    <h3 class="product-name">Accessories & More</h3>
+                    <p class="product-desc">Matching shoes, hairbands, and sets to complete the look.</p>
+                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Accessories from the Kids Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="nav-logo">Shree <span>Omkar</span> Fashion</div>
+                <p>Style for Every Soul Premium readymade garments for the whole family, at prices you'll love.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="kids.html">Kids Wear</a></li>
+                    <li><a href="mens.html">Men's Wear</a></li>
+                    <li><a href="womens.html">Women's Wear</a></li>
+                    <li><a href="index.html#categories">View All</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#testimonials">Reviews</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#features">Why Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Shree Omkar Fashion. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a class="whatsapp-float" href="https://wa.me/918359970016" target="_blank" title="Chat on WhatsApp"
+        aria-label="Chat on WhatsApp">💬</a>
+
+    <!-- BACK TO TOP -->
+    <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // BACK TO TOP
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (backToTop) {
+                    backToTop.classList.toggle('visible', window.scrollY > 300);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

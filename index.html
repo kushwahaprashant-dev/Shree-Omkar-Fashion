@@ -47,7 +47,7 @@
 
             /* Text Colors */
             --text-light: #FFFFFF;
-            --text-light-muted: rgba(255, 255, 255, 0.7);
+            --text-light-muted: rgba(255, 255, 255, 0.9);
             --text-dark: #121212;
             --text-dark-muted: rgba(18, 18, 18, 0.7);
             --text-gold: #D4AF37;
@@ -1355,11 +1355,12 @@
             </div>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="#categories">Collections</a></li>
-                <li><a href="#features">Why Us</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="kids.html">Kids Wear</a></li>
+                <li><a href="mens.html">Men's Wear</a></li>
+                <li><a href="womens.html">Women's Wear</a></li>
+                <li><a href="index.html#features">Why Us</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
 
             <button class="nav-cta"
@@ -1416,7 +1417,7 @@
                     <div class="cat-emoji cat-bg-kids">👗</div>
                 </div>
                 <div class="cat-overlay">
-                    <button class="cat-btn">Explore</button>
+                    <a href="kids.html" class="cat-btn">Explore</a>
                 </div>
                 <div class="cat-info">
                     <div class="cat-name">Kids Wear</div>
@@ -1431,7 +1432,7 @@
                     <div class="cat-emoji cat-bg-men">👔</div>
                 </div>
                 <div class="cat-overlay">
-                    <button class="cat-btn">Explore</button>
+                    <a href="mens.html" class="cat-btn">Explore</a>
                 </div>
                 <div class="cat-info">
                     <div class="cat-name">Men's Wear</div>
@@ -1446,7 +1447,7 @@
                     <div class="cat-emoji cat-bg-women">👘</div>
                 </div>
                 <div class="cat-overlay">
-                    <button class="cat-btn">Explore</button>
+                    <a href="womens.html" class="cat-btn">Explore</a>
                 </div>
                 <div class="cat-info">
                     <div class="cat-name">Women's Wear</div>
@@ -1639,10 +1640,10 @@
             <div class="footer-links">
                 <h4>Collections</h4>
                 <ul>
-                    <li><a href="#categories">Kids Wear</a></li>
-                    <li><a href="#categories">Men's Wear</a></li>
-                    <li><a href="#categories">Women's Wear</a></li>
-                    <li><a href="#categories">Festive Special</a></li>
+                    <li><a href="kids.html">Kids Wear</a></li>
+                    <li><a href="mens.html">Men's Wear</a></li>
+                    <li><a href="womens.html">Women's Wear</a></li>
+                    <li><a href="index.html#categories">View All</a></li>
                 </ul>
             </div>
 
@@ -1801,6 +1802,8 @@
             }, { threshold: 0.3 });
 
             if (aboutSection) countObserver.observe(aboutSection);
+
+
 
             // ────────────────────────────────────────────────────────────────
             // ✨ NEW: WHATSAPP QUICK MESSAGE BUTTON
