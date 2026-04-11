@@ -12,32 +12,170 @@
         rel="stylesheet">
     <style>
         :root {
+            /* Black Primary */
             --black-primary: #000000;
             --black-soft: #121212;
+            --black-rich: #0A0A0A;
+            --black-warm: #1A1818;
+            --black-light: #2A2A2A;
+
+            /* White Base */
             --white-pure: #FFFFFF;
             --white-soft: #F8F8F8;
+            --white-warm: #F5F5F5;
+            --white-cream: #FAFAFA;
+
+            /* Gold Accent */
             --gold-classic: #D4AF37;
+            --gold-soft: #C9A14A;
             --gold-dark: #B8962E;
+            --gold-light: #E8C96A;
+            --gold-muted: #A8882C;
+
+            /* Text Colors */
+            --text-light: #FFFFFF;
+            --text-light-muted: rgba(255, 255, 255, 0.9);
             --text-dark: #121212;
             --text-dark-muted: rgba(18, 18, 18, 0.7);
-            --text-light-muted: rgba(255, 255, 255, 0.9);
+            --text-gold: #D4AF37;
+
+            /* Shadows & Effects */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
             --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.16);
+            --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.2);
             --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.2);
+            --shadow-gold-lg: 0 16px 50px rgba(212, 175, 55, 0.25);
+
+            /* Animation */
             --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--white-soft); color: var(--text-dark); font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.6; }
         a { text-decoration: none; color: inherit; }
 
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding: 12px 0; }
-        .nav-container { display: flex; align-items: center; justify-content: space-between; padding: 0 5%; }
-        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; }
-        .nav-logo span { color: var(--gold-classic); font-style: italic; }
-        .nav-links { list-style: none; display: flex; gap: 30px; }
-        .nav-links a { font-size: 0.85rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.1em; transition: 0.3s; }
+        /* ── MOBILE-FIRST NAVIGATION ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 12px 0;
+            transition: transform 0.6s var(--ease-premium);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            color: var(--black-primary);
+            letter-spacing: 0.08em;
+            font-weight: 700;
+        }
+
+        .nav-logo span {
+            color: var(--gold-classic);
+            font-style: italic;
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: block;
+            width: 30px;
+            height: 24px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--black-primary);
+            position: absolute;
+            transition: all 0.3s var(--ease-premium);
+        }
+
+        .mobile-menu-btn span:nth-child(1) { top: 0; }
+        .mobile-menu-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        .mobile-menu-btn span:nth-child(3) { bottom: 0; }
+
+        .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+        .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: min(300px, 80%);
+            height: 100vh;
+            background: var(--white-pure);
+            padding: 80px 30px 30px;
+            list-style: none;
+            transition: right 0.4s var(--ease-premium);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        .nav-links.active { right: 0; }
+        .nav-links li { margin-bottom: 30px; }
+
+        .nav-links a {
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: block;
+            padding: 8px 0;
+        }
+
         .nav-links a:hover { color: var(--gold-classic); }
         .back-home { color: var(--gold-classic) !important; font-weight: 700 !important; }
+
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+
+        @media (min-width: 1024px) {
+            .mobile-menu-btn { display: none; }
+            .nav-overlay { display: none; }
+            .nav-links {
+                position: static;
+                width: auto;
+                height: auto;
+                background: transparent;
+                padding: 0;
+                display: flex;
+                gap: 40px;
+                box-shadow: none;
+                transition: none;
+            }
+            .nav-links li { margin-bottom: 0; }
+        }
 
         .page-hero { height: 60vh; background: #0A0A0A; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white-pure); margin-top: 60px; overflow: hidden; }
         .hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(212,175,55,0.2), transparent); }
@@ -219,23 +357,32 @@
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
             .hero-title { font-size: 2.5rem; }
         }
     </style>
 </head>
 
 <body>
-    <nav>
+    <nav id="navbar" class="visible">
         <div class="nav-container">
-            <div class="nav-logo">Shree <span>Omkar</span> Fashion</div>
-            <ul class="nav-links">
+            <a href="index.html" class="nav-logo">Shree <span>Omkar</span> Fashion</a>
+            
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="back-home">← Back to Home</a></li>
                 <li><a href="kids.html">Kids Wear</a></li>
                 <li><a href="mens.html">Men's Wear</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
 
     <section class="page-hero">
         <div class="hero-overlay"></div>
@@ -362,14 +509,41 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
+            // ── MOBILE MENU ──
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            const navOverlay = document.getElementById('navOverlay');
+
+            function toggleMenu() {
+                menuBtn.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                navOverlay.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            }
+
+            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+            if (navOverlay) navOverlay.addEventListener('click', toggleMenu);
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) {
+                        toggleMenu();
+                    }
                 });
-            }, { threshold: 0.1 });
+            });
+
+            // ── SCROLL REVEAL ──
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => entry.target.classList.add('visible'), index * 50);
+                    }
+                });
+            }, { threshold: 0.15 });
+
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-            // BACK TO TOP
+            // ── BACK TO TOP ──
             const backToTop = document.getElementById('backToTop');
             window.addEventListener('scroll', () => {
                 if (backToTop) {
