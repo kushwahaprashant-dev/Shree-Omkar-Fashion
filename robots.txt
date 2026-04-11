@@ -1,0 +1,5 @@
+# robots.txt for Shree Omkar Fashion
+User-agent: *
+Allow: /
+
+Sitemap: https://shreeomkarfashion.com/sitemap.xml
