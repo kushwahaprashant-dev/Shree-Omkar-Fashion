@@ -4,555 +4,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Men's Wear in Surat – Premium Readymade Collection | Shree Omkar Fashion</title>
-    <meta name="description" content="Shop the best Men's wear in Surat! Shree Omkar Fashion offers premium formal shirts, ethnic kurtas, and traditional wear for men in Godadara and surrounding areas.">
-    <meta name="keywords" content="Men's wear Surat, men's clothing shop Surat, formal shirts Surat, traditional wear for men Surat, Shree Omkar Fashion">
+    <title>Men's Clothing Categories – Shirts, T-Shirts, Trousers, Jeans & Ethnic | Shree Omkar Fashion</title>
+    <meta name="description"
+        content="Explore our men's clothing categories: formal shirts, casual tees, trousers, jeans (baggy, slim, straight), kurtas, ethnic wear and more. Visit our Godadara, Surat store.">
+    <link rel="canonical" href="https://shreeomkarfashion.com/mens.html">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            /* Black Primary */
-            --black-primary: #000000;
-            --black-soft: #121212;
-            --black-rich: #0A0A0A;
-            --black-warm: #1A1818;
-            --black-light: #2A2A2A;
 
-            /* White Base */
-            --white-pure: #FFFFFF;
-            --white-soft: #F8F8F8;
-            --white-warm: #F5F5F5;
-            --white-cream: #FAFAFA;
-
-            /* Gold Accent */
-            --gold-classic: #D4AF37;
-            --gold-soft: #C9A14A;
-            --gold-dark: #B8962E;
-            --gold-light: #E8C96A;
-            --gold-muted: #A8882C;
-
-            /* Text Colors */
-            --text-light: #FFFFFF;
-            --text-light-muted: rgba(255, 255, 255, 0.9);
-            --text-dark: #121212;
-            --text-dark-muted: rgba(18, 18, 18, 0.7);
-            --text-gold: #D4AF37;
-
-            /* Shadows & Effects */
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.16);
-            --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.2);
-            --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.2);
-            --shadow-gold-lg: 0 16px 50px rgba(212, 175, 55, 0.25);
-
-            /* Animation */
-            --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
-            --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--white-soft); color: var(--text-dark); font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
-
-        /* ── MOBILE-FIRST NAVIGATION ── */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 12px 0;
-            transition: transform 0.6s var(--ease-premium);
-        }
-
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5%;
-        }
-
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.2rem, 4vw, 1.8rem);
-            color: var(--black-primary);
-            letter-spacing: 0.08em;
-            font-weight: 700;
-        }
-
-        .nav-logo span {
-            color: var(--gold-classic);
-            font-style: italic;
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-btn {
-            display: block;
-            width: 30px;
-            height: 24px;
-            position: relative;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: var(--black-primary);
-            position: absolute;
-            transition: all 0.3s var(--ease-premium);
-        }
-
-        .mobile-menu-btn span:nth-child(1) { top: 0; }
-        .mobile-menu-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-        .mobile-menu-btn span:nth-child(3) { bottom: 0; }
-
-        .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-        .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
-        .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
-
-        .nav-links {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: min(300px, 80%);
-            height: 100vh;
-            background: var(--white-pure);
-            padding: 80px 30px 30px;
-            list-style: none;
-            transition: right 0.4s var(--ease-premium);
-            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .nav-links.active { right: 0; }
-        .nav-links li { margin-bottom: 30px; }
-
-        .nav-links a {
-            font-size: 1rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            display: block;
-            padding: 8px 0;
-        }
-
-        .nav-links a:hover { color: var(--gold-classic); }
-        .back-home { color: var(--gold-classic) !important; font-weight: 700 !important; }
-
-        .nav-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .nav-overlay.active { opacity: 1; visibility: visible; }
-
-        @media (min-width: 1024px) {
-            .mobile-menu-btn { display: none; }
-            .nav-overlay { display: none; }
-            .nav-links {
-                position: static;
-                width: auto;
-                height: auto;
-                background: transparent;
-                padding: 0;
-                display: flex;
-                gap: 40px;
-                box-shadow: none;
-                transition: none;
-            }
-            .nav-links li { margin-bottom: 0; }
-        }
-
-        .page-hero { height: 60vh; background: #050505; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white-pure); margin-top: 60px; overflow: hidden; }
-        .hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(212,175,55,0.1), transparent); }
-        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); position: relative; z-index: 2; margin-bottom: 10px; }
-        .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-classic); position: relative; z-index: 2; }
-
-        .product-section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--black-primary); }
-        .divider { width: 60px; height: 3px; background: var(--gold-classic); margin: 20px auto; }
-
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; }
-        .product-card { background: var(--white-pure); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); transition: 0.4s; border: 1px solid rgba(212,175,55,0.1); }
-        .product-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-gold); border-color: var(--gold-classic); }
-        .product-img { height: 350px; background: #222; display: flex; align-items: center; justify-content: center; font-size: 5rem; transition: 0.6s; }
-        .product-card:hover .product-img { transform: scale(1.05); }
-        .product-info { padding: 25px; text-align: center; }
-        .product-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; }
-        .product-desc { font-size: 0.9rem; color: var(--text-dark-muted); margin-bottom: 20px; }
-        .inquiry-btn { display: inline-block; padding: 12px 30px; border: 1.5px solid var(--gold-classic); color: var(--gold-classic); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; border-radius: 50px; transition: 0.3s; }
-        .inquiry-btn:hover { background: var(--gold-classic); color: var(--black-primary); }
-
-        /* ── FOOTER ── */
-        footer {
-            background: var(--black-primary);
-            padding: 60px 5% 30px;
-        }
-
-        .footer-top {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto 40px;
-        }
-
-        @media (min-width: 768px) {
-            .footer-top {
-                grid-template-columns: 2fr 1fr 1fr;
-            }
-        }
-
-        .footer-brand .nav-logo {
-            font-size: 2rem;
-            color: var(--gold-classic);
-            margin-bottom: 15px;
-        }
-
-        .footer-brand p {
-            color: var(--text-light-muted);
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-
-        .footer-links h4 {
-            color: var(--gold-classic);
-            font-size: 0.85rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold-classic);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(212, 175, 55, 0.15);
-            padding-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-            .footer-bottom {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
-
-            .footer-bottom p {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .social-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 0.1em;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--gold-classic);
-        }
-
-        /* ── WHATSAPP FLOAT ── */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 500;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* ── BACK TO TOP BUTTON ── */
-        .back-to-top {
-            position: fixed;
-            bottom: 100px;
-            right: 25px;
-            z-index: 400;
-            background: var(--gold-classic);
-            color: var(--black-primary);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            box-shadow: var(--shadow-gold);
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            background: var(--gold-dark);
-        }
-
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s var(--ease-premium); }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/collections-shared.css">
+    <link rel="stylesheet" href="assets/css/mens.css">
 </head>
 
 <body>
-    <nav id="navbar" class="visible">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">Shree <span>Omkar</span> Fashion</a>
-            
-            <div class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
+    <site-header></site-header>
+
+    <!-- ── COLLECTION HERO ── -->
+    <header class="collection-hero">
+        <div class="collection-hero-overlay"></div>
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+
+        <div class="collection-hero-content">
+            <span class="collection-badge">✦ Premium Collection</span>
+            <h1 class="collection-title">Men's <span class="gold-accent">Categories</span></h1>
+
+            <p class="collection-subtitle">
+                From sharp formals to relaxed denim — browse our curated men's categories.
+                Every piece is handpicked for fit, fabric and finish.
+            </p>
+
+            <div class="collection-meta">
+                <span class="meta-chip">S – XXL</span>
+                <span class="meta-chip">Godadara, Surat</span>
+                <span class="meta-chip">Order on WhatsApp</span>
             </div>
 
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="back-home">← Back to Home</a></li>
-                <li><a href="kids.html">Kids Wear</a></li>
-                <li><a href="womens.html">Women's Wear</a></li>
-                <li><a href="index.html#about">About Us</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
+            <div class="hero-btns">
+                <a href="#categories" class="btn-primary">
+                    Explore Categories
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="https://wa.me/918359970016?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20men%27s%20collection"
+                    target="_blank" rel="noopener" class="btn-outline">Chat with Us</a>
+            </div>
         </div>
-    </nav>
-    <div class="nav-overlay" id="navOverlay"></div>
 
-    <section class="page-hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Men's <span style="color: var(--gold-classic);">Collection</span></h1>
-            <p class="hero-subtitle">Sharp · Modern · Sophisticated</p>
+        <!-- Hero stats -->
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="hero-stat-num">9+</span>
+                <span class="hero-stat-label">Categories</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <span class="hero-stat-num">600+</span>
+                <span class="hero-stat-label">Styles</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <span class="hero-stat-num">4.9★</span>
+                <span class="hero-stat-label">Customer Rating</span>
+            </div>
         </div>
-    </section>
+    </header>
 
-    <section class="product-section">
+    <!-- ── MARQUEE ── -->
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+            <span>Formal Shirts</span>
+            <span>Casual Shirts</span>
+            <span>T-Shirts &amp; Polos</span>
+            <span>Trousers &amp; Chinos</span>
+            <span>Jeans &amp; Denim</span>
+            <span>Kurtas &amp; Pajamas</span>
+            <span>Kote Pant</span>
+            <span>Ethnic Wear</span>
+            <span>Nightwear</span>
+            <span>Formal Shirts</span>
+            <span>Casual Shirts</span>
+            <span>T-Shirts &amp; Polos</span>
+            <span>Trousers &amp; Chinos</span>
+            <span>Jeans &amp; Denim</span>
+            <span>Kurtas &amp; Pajamas</span>
+            <span>Kote Pant</span>
+            <span>Ethnic Wear</span>
+            <span>Nightwear</span>
+        </div>
+    </div>
+
+    <!-- ── CATEGORY GRID ── -->
+    <section class="category-section" id="categories">
         <div class="section-header reveal">
-            <h2>Elegance Defined</h2>
+            <p class="section-tag">Shop by Category</p>
+            <h2>What Are You Looking For?</h2>
             <div class="divider"></div>
-            <p>Premium readymade shirts, ethnic wear, and daily essentials.</p>
+            <p class="section-sub">
+                Browse our range of men's clothing categories. Send us a message on WhatsApp for current stock,
+                sizes and prices.
+            </p>
         </div>
 
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);" role="img" aria-label="Executive Formal Shirts for Men">👔</div>
-                <div class="product-info">
-                    <h3 class="product-name">Executive Formal Shirts</h3>
-                    <p class="product-desc">Luxury cotton shirts with a perfect slim-fit for the modern professional.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Executive Formal Shirts from the Men's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
-                </div>
-            </div>
+        <div class="category-grid">
 
-            <!-- Product 2 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #8e9eab 0%, #eef2f3 100%);" role="img" aria-label="Traditional Kurtas for Men">🧥</div>
-                <div class="product-info">
-                    <h3 class="product-name">Traditional Kurtas</h3>
-                    <p class="product-desc">Designer Silk and Linen Kurtas for weddings and festive evenings.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Traditional Kurtas from the Men's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+            <!-- 1. Formal Shirts -->
+            <article class="category-card reveal">
+                <span class="category-badge">New</span>
+                <div class="category-icon-wrap">
+                    <span class="category-icon">👔</span>
                 </div>
-            </div>
+                <h3 class="category-name">Formal Shirts</h3>
+                <p class="category-desc">
+                    Crisp cotton and wrinkle-resistant shirts for office and occasions.
+                </p>
+                <div class="category-tags">
+                    <span>Slim Fit</span>
+                    <span>Regular Fit</span>
+                    <span>Full Sleeve</span>
+                </div>
+                <span class="category-count">45+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Men%27s%20Formal%20Shirts"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
 
-            <!-- Product 3 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #232526 0%, #414345 100%);" role="img" aria-label="Premium Trousers for Men">👖</div>
-                <div class="product-info">
-                    <h3 class="product-name">Premium Trousers</h3>
-                    <p class="product-desc">Tailored chinos and formal trousers for all-day elegance and comfort.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Premium Trousers from the Men's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+            <!-- 2. Casual Shirts -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">👕</span>
                 </div>
-            </div>
+                <h3 class="category-name">Casual Shirts</h3>
+                <p class="category-desc">
+                    Checked, printed and solid casual shirts for everyday comfort.
+                </p>
+                <div class="category-tags">
+                    <span>Checked</span>
+                    <span>Printed</span>
+                    <span>Denim</span>
+                </div>
+                <span class="category-count">80+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Men%27s%20Casual%20Shirts"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
 
-            <!-- Product 4 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">👔</div>
-                <div class="product-info">
-                    <h3 class="product-name">Casual Checked Shirts</h3>
-                    <p class="product-desc">Premium casual shirts perfect for weekend outings and gatherings.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Casual Checked Shirts from the Men's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+            <!-- 3. T-Shirts & Polos -->
+            <article class="category-card reveal">
+                <span class="category-badge">Popular</span>
+                <div class="category-icon-wrap">
+                    <span class="category-icon">👚</span>
                 </div>
-            </div>
-            
-            <!-- Product 5 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #373b44 0%, #4286f4 100%);">🤵</div>
-                <div class="product-info">
-                    <h3 class="product-name">Wedding Sherwanis</h3>
-                    <p class="product-desc">Handcrafted ethnic wear for Groomsmen and special guests.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Wedding Sherwanis from the Men's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+                <h3 class="category-name">T-Shirts &amp; Polos</h3>
+                <p class="category-desc">
+                    Round neck, V-neck and polo tees in soft breathable cotton.
+                </p>
+                <div class="category-tags">
+                    <span>Round Neck</span>
+                    <span>Polo</span>
+                    <span>Graphic</span>
                 </div>
-            </div>
+                <span class="category-count">120+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Men%27s%20T-Shirts%20and%20Polos"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
 
-            <!-- Product 6 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #485563 0%, #29323c 100%);">👕</div>
-                <div class="product-info">
-                    <h3 class="product-name">Polo T-Shirts</h3>
-                    <p class="product-desc">High-quality knit polos for a clean and sporty weekend look.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Polo T-Shirts from the Men's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+            <!-- 4. Trousers & Chinos -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">👖</span>
                 </div>
+                <h3 class="category-name">Trousers &amp; Chinos</h3>
+                <p class="category-desc">
+                    Formal trousers, slim chinos and joggers for work and weekends.
+                </p>
+                <div class="category-tags">
+                    <span>Formal</span>
+                    <span>Chinos</span>
+                    <span>Joggers</span>
+                </div>
+                <span class="category-count">60+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Men%27s%20Trousers%20and%20Chinos"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+            <!-- 5. Jeans & Denim -->
+            <article class="category-card reveal">
+                <span class="category-badge">Bestseller</span>
+                <div class="category-icon-wrap">
+                    <span class="category-icon">👖</span>
+                </div>
+                <h3 class="category-name">Jeans &amp; Denim</h3>
+                <p class="category-desc">
+                    Baggy, straight, slim and regular fit jeans in classic washes.
+                </p>
+                <div class="category-tags">
+                    <span>Baggy</span>
+                    <span>Straight</span>
+                    <span>Slim</span>
+                    <span>Regular</span>
+                </div>
+                <span class="category-count">90+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Men%27s%20Jeans%20and%20Denim"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+            <!-- 6. Kurtas & Pajamas -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">🧵</span>
+                </div>
+                <h3 class="category-name">Kurtas &amp; Pajamas</h3>
+                <p class="category-desc">
+                    Traditional comfort for festivals, poojas and family functions.
+                </p>
+                <div class="category-tags">
+                    <span>Festive</span>
+                    <span>Cotton</span>
+                    <span>Silk Blend</span>
+                </div>
+                <span class="category-count">40+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Men%27s%20Kurtas%20and%20Pajamas"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+            <!-- 7. Kote Pant -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">🎩</span>
+                </div>
+                <h3 class="category-name">Kote Pant</h3>
+                <p class="category-desc">
+                    Smart ethnic sets — perfect for weddings and special occasions.
+                </p>
+                <div class="category-tags">
+                    <span>Ethnic</span>
+                    <span>Wedding</span>
+                    <span>Festive</span>
+                </div>
+                <span class="category-count">25+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Men%27s%20Kote%20Pant"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+            <!-- 8. Ethnic Wear -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">✨</span>
+                </div>
+                <h3 class="category-name">Ethnic Wear</h3>
+                <p class="category-desc">
+                    Sherwanis, Nehru jackets and designer kurtas for festive occasions.
+                </p>
+                <div class="category-tags">
+                    <span>Sherwani</span>
+                    <span>Nehru Jacket</span>
+                    <span>Designer</span>
+                </div>
+                <span class="category-count">50+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Men%27s%20Ethnic%20Wear"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+            <!-- 9. Nightwear -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">🌙</span>
+                </div>
+                <h3 class="category-name">Nightwear</h3>
+                <p class="category-desc">
+                    Cosy night suits and pyjamas in soft brushed cotton for peaceful sleep.
+                </p>
+                <div class="category-tags">
+                    <span>Pyjama Sets</span>
+                    <span>Lounge</span>
+                    <span>All Sizes</span>
+                </div>
+                <span class="category-count">30+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Men%27s%20Nightwear"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ── TRUST STRIP ── -->
+    <section class="trust-strip">
+        <div class="trust-grid">
+            <div class="trust-item reveal">
+                <div class="trust-icon-wrap"><span class="trust-icon">🧵</span></div>
+                <h3 class="trust-title">Premium Fabrics</h3>
+                <p class="trust-text">Breathable cottons, linens and blends that last.</p>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon-wrap"><span class="trust-icon">💬</span></div>
+                <h3 class="trust-title">Order on WhatsApp</h3>
+                <p class="trust-text">Send a message, get live photos and confirm your size in minutes.</p>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon-wrap"><span class="trust-icon">🏷️</span></div>
+                <h3 class="trust-title">Honest Pricing</h3>
+                <p class="trust-text">Direct-from-store rates with no middlemen and no hidden charges.</p>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon-wrap"><span class="trust-icon">📍</span></div>
+                <h3 class="trust-title">Visit Our Store</h3>
+                <p class="trust-text">Godadara, Surat — try before you buy, any day of the week.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-top">
-            <div class="footer-brand">
-                <div class="nav-logo">Shree <span>Omkar</span> Fashion</div>
-                <p>Style for Every Soul Premium readymade garments for the whole family, at prices you'll love.</p>
-            </div>
-
-            <div class="footer-links">
-                <h4>Collections</h4>
-                <ul>
-                    <li><a href="kids.html">Kids Wear</a></li>
-                    <li><a href="mens.html">Men's Wear</a></li>
-                    <li><a href="womens.html">Women's Wear</a></li>
-                    <li><a href="index.html#categories">View All</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="index.html#testimonials">Reviews</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="index.html#features">Why Us</a></li>
-                </ul>
+    <!-- ── CTA ── -->
+    <section class="collection-cta">
+        <div class="collection-cta-inner reveal">
+            <span class="collection-badge">Can't Decide?</span>
+            <h2>We'll Help You Find the Perfect Fit</h2>
+            <p>Tell us the occasion, size and budget — we'll send you handpicked options on WhatsApp within
+                minutes.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/918359970016?text=Hi%2C%20please%20help%20me%20pick%20a%20men%27s%20outfit"
+                    target="_blank" rel="noopener" class="btn-primary">
+                    Get Personal Styling
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="index.html#contact" class="btn-outline">Visit the Store</a>
             </div>
         </div>
+    </section>
 
-        <div class="footer-bottom">
-            <p>© 2026 Shree Omkar Fashion. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">WhatsApp</a>
-            </div>
-        </div>
-    </footer>
+    <site-footer></site-footer>
 
-    <!-- WHATSAPP FLOAT -->
-    <a class="whatsapp-float" href="https://wa.me/918359970016" target="_blank" title="Chat on WhatsApp"
-        aria-label="Chat on WhatsApp">💬</a>
-
-    <!-- BACK TO TOP -->
-    <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // ── MOBILE MENU ──
-            const menuBtn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            const navOverlay = document.getElementById('navOverlay');
-
-            function toggleMenu() {
-                menuBtn.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                navOverlay.classList.toggle('active');
-                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-            }
-
-            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
-            if (navOverlay) navOverlay.addEventListener('click', toggleMenu);
-
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navLinks.classList.contains('active')) {
-                        toggleMenu();
-                    }
-                });
-            });
-
-            // ── SCROLL REVEAL ──
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => entry.target.classList.add('visible'), index * 50);
-                    }
-                });
-            }, { threshold: 0.15 });
-
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-            // ── BACK TO TOP ──
-            const backToTop = document.getElementById('backToTop');
-            window.addEventListener('scroll', () => {
-                if (backToTop) {
-                    backToTop.classList.toggle('visible', window.scrollY > 300);
-                }
-            });
-        });
-    </script>
+    <script src="assets/js/components/header.js" type="module"></script>
+    <script src="assets/js/components/footer.js" type="module"></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
+
 </html>

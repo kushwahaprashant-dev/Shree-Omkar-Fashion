@@ -4,555 +4,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Women's Clothing in Surat – Sarees, Suits & Ethnic Wear | Shree Omkar Fashion</title>
-    <meta name="description" content="Best women's clothing store in Surat! Explore our beautiful collection of sarees, salwar suits, kurtis, and designer ethnic wear at Shree Omkar Fashion Godadara.">
-    <meta name="keywords" content="women's clothing Surat, sarees in Surat, salwar suits Surat, ethnic wear Surat, Shree Omkar Fashion Godadara">
+    <title>Women's Clothing Categories – Sarees, Kurtis, Lehengas & Tops | Shree Omkar Fashion</title>
+    <meta name="description"
+        content="Explore our women's clothing categories: beautiful sarees, designer kurtis, lehengas, western tops, dresses, and ethnic wear. Visit our Godadara, Surat store.">
+    <link rel="canonical" href="https://shreeomkarfashion.com/womens.html">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            /* Black Primary */
-            --black-primary: #000000;
-            --black-soft: #121212;
-            --black-rich: #0A0A0A;
-            --black-warm: #1A1818;
-            --black-light: #2A2A2A;
 
-            /* White Base */
-            --white-pure: #FFFFFF;
-            --white-soft: #F8F8F8;
-            --white-warm: #F5F5F5;
-            --white-cream: #FAFAFA;
-
-            /* Gold Accent */
-            --gold-classic: #D4AF37;
-            --gold-soft: #C9A14A;
-            --gold-dark: #B8962E;
-            --gold-light: #E8C96A;
-            --gold-muted: #A8882C;
-
-            /* Text Colors */
-            --text-light: #FFFFFF;
-            --text-light-muted: rgba(255, 255, 255, 0.9);
-            --text-dark: #121212;
-            --text-dark-muted: rgba(18, 18, 18, 0.7);
-            --text-gold: #D4AF37;
-
-            /* Shadows & Effects */
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.16);
-            --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.2);
-            --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.2);
-            --shadow-gold-lg: 0 16px 50px rgba(212, 175, 55, 0.25);
-
-            /* Animation */
-            --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
-            --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--white-soft); color: var(--text-dark); font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.6; }
-        a { text-decoration: none; color: inherit; }
-
-        /* ── MOBILE-FIRST NAVIGATION ── */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 12px 0;
-            transition: transform 0.6s var(--ease-premium);
-        }
-
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5%;
-        }
-
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.2rem, 4vw, 1.8rem);
-            color: var(--black-primary);
-            letter-spacing: 0.08em;
-            font-weight: 700;
-        }
-
-        .nav-logo span {
-            color: var(--gold-classic);
-            font-style: italic;
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-btn {
-            display: block;
-            width: 30px;
-            height: 24px;
-            position: relative;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: var(--black-primary);
-            position: absolute;
-            transition: all 0.3s var(--ease-premium);
-        }
-
-        .mobile-menu-btn span:nth-child(1) { top: 0; }
-        .mobile-menu-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-        .mobile-menu-btn span:nth-child(3) { bottom: 0; }
-
-        .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-        .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
-        .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
-
-        .nav-links {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: min(300px, 80%);
-            height: 100vh;
-            background: var(--white-pure);
-            padding: 80px 30px 30px;
-            list-style: none;
-            transition: right 0.4s var(--ease-premium);
-            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .nav-links.active { right: 0; }
-        .nav-links li { margin-bottom: 30px; }
-
-        .nav-links a {
-            font-size: 1rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            display: block;
-            padding: 8px 0;
-        }
-
-        .nav-links a:hover { color: var(--gold-classic); }
-        .back-home { color: var(--gold-classic) !important; font-weight: 700 !important; }
-
-        .nav-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .nav-overlay.active { opacity: 1; visibility: visible; }
-
-        @media (min-width: 1024px) {
-            .mobile-menu-btn { display: none; }
-            .nav-overlay { display: none; }
-            .nav-links {
-                position: static;
-                width: auto;
-                height: auto;
-                background: transparent;
-                padding: 0;
-                display: flex;
-                gap: 40px;
-                box-shadow: none;
-                transition: none;
-            }
-            .nav-links li { margin-bottom: 0; }
-        }
-
-        .page-hero { height: 60vh; background: #0A0A0A; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white-pure); margin-top: 60px; overflow: hidden; }
-        .hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(212,175,55,0.2), transparent); }
-        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); position: relative; z-index: 2; margin-bottom: 10px; }
-        .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-classic); position: relative; z-index: 2; }
-
-        .product-section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--black-primary); }
-        .divider { width: 60px; height: 3px; background: var(--gold-classic); margin: 20px auto; }
-
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px; }
-        .product-card { background: var(--white-pure); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); transition: 0.4s; border: 1px solid rgba(212,175,55,0.1); }
-        .product-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-gold); border-color: var(--gold-classic); }
-        .product-img { height: 350px; background: #111; display: flex; align-items: center; justify-content: center; font-size: 5rem; transition: 0.6s; }
-        .product-card:hover .product-img { transform: scale(1.05); }
-        .product-info { padding: 25px; text-align: center; }
-        .product-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; }
-        .product-desc { font-size: 0.9rem; color: var(--text-dark-muted); margin-bottom: 20px; }
-        .inquiry-btn { display: inline-block; padding: 12px 30px; border: 1.5px solid var(--gold-classic); color: var(--gold-classic); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; border-radius: 50px; transition: 0.3s; }
-        .inquiry-btn:hover { background: var(--gold-classic); color: var(--black-primary); }
-
-        /* ── FOOTER ── */
-        footer {
-            background: var(--black-primary);
-            padding: 60px 5% 30px;
-        }
-
-        .footer-top {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto 40px;
-        }
-
-        @media (min-width: 768px) {
-            .footer-top {
-                grid-template-columns: 2fr 1fr 1fr;
-            }
-        }
-
-        .footer-brand .nav-logo {
-            font-size: 2rem;
-            color: var(--gold-classic);
-            margin-bottom: 15px;
-        }
-
-        .footer-brand p {
-            color: var(--text-light-muted);
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-
-        .footer-links h4 {
-            color: var(--gold-classic);
-            font-size: 0.85rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold-classic);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(212, 175, 55, 0.15);
-            padding-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-            .footer-bottom {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
-
-            .footer-bottom p {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .social-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 0.1em;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--gold-classic);
-        }
-
-        /* ── WHATSAPP FLOAT ── */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 500;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* ── BACK TO TOP BUTTON ── */
-        .back-to-top {
-            position: fixed;
-            bottom: 100px;
-            right: 25px;
-            z-index: 400;
-            background: var(--gold-classic);
-            color: var(--black-primary);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            box-shadow: var(--shadow-gold);
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            background: var(--gold-dark);
-        }
-
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s var(--ease-premium); }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/collections-shared.css">
+    <link rel="stylesheet" href="assets/css/womens.css">
 </head>
 
 <body>
-    <nav id="navbar" class="visible">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">Shree <span>Omkar</span> Fashion</a>
-            
-            <div class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
+    <site-header></site-header>
+
+    <!-- ── COLLECTION HERO ── -->
+    <header class="collection-hero">
+        <div class="collection-hero-overlay"></div>
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+
+        <div class="collection-hero-content">
+            <span class="collection-badge">✦ Premium Collection</span>
+            <h1 class="collection-title">Women's <span class="gold-accent">Categories</span></h1>
+
+            <p class="collection-subtitle">
+                From graceful sarees to modern western wear — browse our curated women's categories.
+                Every piece is handpicked for elegance and comfort.
+            </p>
+
+            <div class="collection-meta">
+                <span class="meta-chip">XS – 3XL</span>
+                <span class="meta-chip">Godadara, Surat</span>
+                <span class="meta-chip">Order on WhatsApp</span>
             </div>
 
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="back-home">← Back to Home</a></li>
-                <li><a href="kids.html">Kids Wear</a></li>
-                <li><a href="mens.html">Men's Wear</a></li>
-                <li><a href="index.html#about">About Us</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
+            <div class="hero-btns">
+                <a href="#categories" class="btn-primary">
+                    Explore Categories
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="https://wa.me/918359970016?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20women%27s%20collection"
+                    target="_blank" rel="noopener" class="btn-outline">Chat with Us</a>
+            </div>
         </div>
-    </nav>
-    <div class="nav-overlay" id="navOverlay"></div>
 
-    <section class="page-hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Women's <span style="color: var(--gold-classic);">Fashion</span></h1>
-            <p class="hero-subtitle">Radiant · Graceful · Timeless</p>
+        <!-- Hero stats -->
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="hero-stat-num">9+</span>
+                <span class="hero-stat-label">Categories</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <span class="hero-stat-num">800+</span>
+                <span class="hero-stat-label">Styles</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <span class="hero-stat-num">4.9★</span>
+                <span class="hero-stat-label">Customer Rating</span>
+            </div>
         </div>
-    </section>
+    </header>
 
-    <section class="product-section">
+    <!-- ── MARQUEE ── -->
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+            <span>Designer Sarees</span>
+            <span>Kurtis &amp; Tunics</span>
+            <span>Salwar Suits</span>
+            <span>Lehengas &amp; Cholis</span>
+            <span>Western Tops</span>
+            <span>Dresses &amp; Gowns</span>
+            <span>Indo-Western Fusion</span>
+            <span>Bottom Wear</span>
+            <span>Nightwear</span>
+            <span>Designer Sarees</span>
+            <span>Kurtis &amp; Tunics</span>
+            <span>Salwar Suits</span>
+            <span>Lehengas &amp; Cholis</span>
+            <span>Western Tops</span>
+            <span>Dresses &amp; Gowns</span>
+            <span>Indo-Western Fusion</span>
+            <span>Bottom Wear</span>
+            <span>Nightwear</span>
+        </div>
+    </div>
+
+    <!-- ── CATEGORY GRID ── -->
+    <section class="category-section" id="categories">
         <div class="section-header reveal">
-            <h2>The Art of Grace</h2>
+            <p class="section-tag">Shop by Category</p>
+            <h2>What Are You Looking For?</h2>
             <div class="divider"></div>
-            <p>Explore our exquisite collection of sarees, suits, and designer ethnic wear.</p>
+            <p class="section-sub">
+                Browse our range of women's clothing categories. Send us a message on WhatsApp for current stock,
+                sizes and prices.
+            </p>
         </div>
 
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%);" role="img" aria-label="Designer Silk Sarees for Women">👘</div>
-                <div class="product-info">
-                    <h3 class="product-name">Designer Silk Sarees</h3>
-                    <p class="product-desc">Pure silk sarees with intricate zari work, perfect for weddings and heritage events.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Designer Silk Sarees from the Women's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
-                </div>
-            </div>
+        <div class="category-grid">
 
-            <!-- Product 2 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #E0C3FC 0%, #8EC5FC 100%);" role="img" aria-label="Elegant Salwar Suits for Women">👗</div>
-                <div class="product-info">
-                    <h3 class="product-name">Elegant Salwar Suits</h3>
-                    <p class="product-desc">High-quality cotton and georgette suits with beautiful embroidery designs.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Elegant Salwar Suits from the Women's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+            <!-- 1. Designer Sarees -->
+            <article class="category-card reveal">
+                <span class="category-badge">Bestseller</span>
+                <div class="category-icon-wrap">
+                    <span class="category-icon">👘</span>
                 </div>
-            </div>
+                <h3 class="category-name">Designer Sarees</h3>
+                <p class="category-desc">
+                    Pure silk, georgette and cotton sarees with intricate zari work.
+                </p>
+                <div class="category-tags">
+                    <span>Silk</span>
+                    <span>Cotton</span>
+                    <span>Party Wear</span>
+                </div>
+                <span class="category-count">150+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Designer%20Sarees"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
 
-            <!-- Product 3 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #F6D365 0%, #FDA085 100%);" role="img" aria-label="Trendy Kurtis for Women">🧣</div>
-                <div class="product-info">
-                    <h3 class="product-name">Trendy Kurtis</h3>
-                    <p class="product-desc">Stylish long and short kurtis for your daily comfort and office elegance.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Trendy Kurtis from the Women's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+            <!-- 2. Kurtis & Tunics -->
+            <article class="category-card reveal">
+                <span class="category-badge">Popular</span>
+                <div class="category-icon-wrap">
+                    <span class="category-icon">🧣</span>
                 </div>
-            </div>
+                <h3 class="category-name">Kurtis &amp; Tunics</h3>
+                <p class="category-desc">
+                    Stylish long and short kurtis for daily comfort and office elegance.
+                </p>
+                <div class="category-tags">
+                    <span>Anarkali</span>
+                    <span>Straight Cut</span>
+                    <span>Casual</span>
+                </div>
+                <span class="category-count">200+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Kurtis%20and%20Tunics"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
 
-            <!-- Product 4 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #A8CABA 0%, #5D4157 100%);">🧥</div>
-                <div class="product-info">
-                    <h3 class="product-name">Exclusive Lehengas</h3>
-                    <p class="product-desc">Handcrafted designer lehengas for the modern bride and festive occasions.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Exclusive Lehengas from the Women's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+            <!-- 3. Salwar Suits -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">👗</span>
                 </div>
-            </div>
-            
-            <!-- Product 5 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #FFF1EB 0%, #ACE0F9 100%);">👱‍♀️</div>
-                <div class="product-info">
-                    <h3 class="product-name">Indo-Western Fusion</h3>
-                    <p class="product-desc">Contemporary cuts and traditional fabrics combined for a unique fashion statement.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Indo-Western Fusion from the Women's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+                <h3 class="category-name">Salwar Suits</h3>
+                <p class="category-desc">
+                    High-quality dress materials and stitched suits with beautiful embroidery.
+                </p>
+                <div class="category-tags">
+                    <span>Stitched</span>
+                    <span>Unstitched</span>
+                    <span>Festive</span>
                 </div>
-            </div>
+                <span class="category-count">120+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Salwar%20Suits"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
 
-            <!-- Product 6 -->
-            <div class="product-card reveal">
-                <div class="product-img" style="background: linear-gradient(135deg, #FBC2EB 0%, #A6C1EE 100%);">👜</div>
-                <div class="product-info">
-                    <h3 class="product-name">Festive Accessories</h3>
-                    <p class="product-desc">Matching dupattas and accessories to complement your ethnic ensemble.</p>
-                    <a href="https://wa.me/918359970016?text=Hi, I am interested in your Festive Accessories from the Women's Collection." class="inquiry-btn" target="_blank">Inquire via WhatsApp</a>
+            <!-- 4. Lehengas & Cholis -->
+            <article class="category-card reveal">
+                <span class="category-badge">New</span>
+                <div class="category-icon-wrap">
+                    <span class="category-icon">✨</span>
                 </div>
+                <h3 class="category-name">Lehengas &amp; Cholis</h3>
+                <p class="category-desc">
+                    Handcrafted designer lehengas for brides, bridesmaids and festive occasions.
+                </p>
+                <div class="category-tags">
+                    <span>Bridal</span>
+                    <span>Party Wear</span>
+                    <span>Navratri</span>
+                </div>
+                <span class="category-count">90+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Lehengas%20and%20Cholis"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+            <!-- 5. Western Tops -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">👚</span>
+                </div>
+                <h3 class="category-name">Western Tops</h3>
+                <p class="category-desc">
+                    Trendy crop tops, tunics, shirts and t-shirts for everyday style.
+                </p>
+                <div class="category-tags">
+                    <span>Casual</span>
+                    <span>Party</span>
+                    <span>Formal</span>
+                </div>
+                <span class="category-count">80+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Western%20Tops"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+            <!-- 6. Dresses & Gowns -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">💃</span>
+                </div>
+                <h3 class="category-name">Dresses &amp; Gowns</h3>
+                <p class="category-desc">
+                    Elegant maxi dresses, midi dresses and gowns for evening parties.
+                </p>
+                <div class="category-tags">
+                    <span>Maxi</span>
+                    <span>Midi</span>
+                    <span>Gowns</span>
+                </div>
+                <span class="category-count">60+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Dresses%20and%20Gowns"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+            <!-- 7. Indo-Western Fusion -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">👱‍♀️</span>
+                </div>
+                <h3 class="category-name">Indo-Western Fusion</h3>
+                <p class="category-desc">
+                    Contemporary cuts combined with traditional fabrics for a unique look.
+                </p>
+                <div class="category-tags">
+                    <span>Co-ord Sets</span>
+                    <span>Drape Sarees</span>
+                    <span>Modern</span>
+                </div>
+                <span class="category-count">40+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Indo-Western%20Fusion"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+            <!-- 8. Bottom Wear -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">👖</span>
+                </div>
+                <h3 class="category-name">Bottom Wear</h3>
+                <p class="category-desc">
+                    Comfortable leggings, palazzos, jeans and skirts to pair with your tops.
+                </p>
+                <div class="category-tags">
+                    <span>Palazzos</span>
+                    <span>Leggings</span>
+                    <span>Jeans</span>
+                </div>
+                <span class="category-count">70+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Women's%20Bottom%20Wear"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+            <!-- 9. Nightwear -->
+            <article class="category-card reveal">
+                <div class="category-icon-wrap">
+                    <span class="category-icon">🌙</span>
+                </div>
+                <h3 class="category-name">Nightwear</h3>
+                <p class="category-desc">
+                    Soft cotton nighties, pajama sets and loungewear for ultimate comfort.
+                </p>
+                <div class="category-tags">
+                    <span>Nighties</span>
+                    <span>Pajama Sets</span>
+                    <span>Cotton</span>
+                </div>
+                <span class="category-count">50+ styles available</span>
+                <a class="category-cta"
+                    href="https://wa.me/918359970016?text=Hi%2C%20I%27m%20interested%20in%20Women's%20Nightwear"
+                    target="_blank" rel="noopener">
+                    Enquire on WhatsApp <span class="cta-arrow">→</span>
+                </a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ── TRUST STRIP ── -->
+    <section class="trust-strip">
+        <div class="trust-grid">
+            <div class="trust-item reveal">
+                <div class="trust-icon-wrap"><span class="trust-icon">🧵</span></div>
+                <h3 class="trust-title">Premium Fabrics</h3>
+                <p class="trust-text">Breathable cottons, silks and blends that feel luxurious.</p>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon-wrap"><span class="trust-icon">💬</span></div>
+                <h3 class="trust-title">Order on WhatsApp</h3>
+                <p class="trust-text">Send a message, get live photos and confirm your size in minutes.</p>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon-wrap"><span class="trust-icon">🏷️</span></div>
+                <h3 class="trust-title">Honest Pricing</h3>
+                <p class="trust-text">Direct-from-store rates with no middlemen and no hidden charges.</p>
+            </div>
+            <div class="trust-item reveal">
+                <div class="trust-icon-wrap"><span class="trust-icon">📍</span></div>
+                <h3 class="trust-title">Visit Our Store</h3>
+                <p class="trust-text">Godadara, Surat — try before you buy, any day of the week.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-top">
-            <div class="footer-brand">
-                <div class="nav-logo">Shree <span>Omkar</span> Fashion</div>
-                <p>Style for Every Soul Premium readymade garments for the whole family, at prices you'll love.</p>
-            </div>
-
-            <div class="footer-links">
-                <h4>Collections</h4>
-                <ul>
-                    <li><a href="kids.html">Kids Wear</a></li>
-                    <li><a href="mens.html">Men's Wear</a></li>
-                    <li><a href="womens.html">Women's Wear</a></li>
-                    <li><a href="index.html#categories">View All</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="index.html#testimonials">Reviews</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="index.html#features">Why Us</a></li>
-                </ul>
+    <!-- ── CTA ── -->
+    <section class="collection-cta">
+        <div class="collection-cta-inner reveal">
+            <span class="collection-badge">Can't Decide?</span>
+            <h2>We'll Help You Find the Perfect Outfit</h2>
+            <p>Tell us the occasion, size and budget — we'll send you handpicked options on WhatsApp within
+                minutes.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/918359970016?text=Hi%2C%20please%20help%20me%20pick%20a%20women%27s%20outfit"
+                    target="_blank" rel="noopener" class="btn-primary">
+                    Get Personal Styling
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="index.html#contact" class="btn-outline">Visit the Store</a>
             </div>
         </div>
+    </section>
 
-        <div class="footer-bottom">
-            <p>© 2026 Shree Omkar Fashion. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">WhatsApp</a>
-            </div>
-        </div>
-    </footer>
+    <site-footer></site-footer>
 
-    <!-- WHATSAPP FLOAT -->
-    <a class="whatsapp-float" href="https://wa.me/918359970016" target="_blank" title="Chat on WhatsApp"
-        aria-label="Chat on WhatsApp">💬</a>
-
-    <!-- BACK TO TOP -->
-    <div class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // ── MOBILE MENU ──
-            const menuBtn = document.getElementById('mobileMenuBtn');
-            const navLinks = document.getElementById('navLinks');
-            const navOverlay = document.getElementById('navOverlay');
-
-            function toggleMenu() {
-                menuBtn.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                navOverlay.classList.toggle('active');
-                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-            }
-
-            if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
-            if (navOverlay) navOverlay.addEventListener('click', toggleMenu);
-
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navLinks.classList.contains('active')) {
-                        toggleMenu();
-                    }
-                });
-            });
-
-            // ── SCROLL REVEAL ──
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => entry.target.classList.add('visible'), index * 50);
-                    }
-                });
-            }, { threshold: 0.15 });
-
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-            // ── BACK TO TOP ──
-            const backToTop = document.getElementById('backToTop');
-            window.addEventListener('scroll', () => {
-                if (backToTop) {
-                    backToTop.classList.toggle('visible', window.scrollY > 300);
-                }
-            });
-        });
-    </script>
+    <script src="assets/js/components/header.js" type="module"></script>
+    <script src="assets/js/components/footer.js" type="module"></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
+
 </html>
